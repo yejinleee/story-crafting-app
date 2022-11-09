@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "story-crafting-app",
+    "slug": "story-crafting-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "story-crafting-app"
+}
