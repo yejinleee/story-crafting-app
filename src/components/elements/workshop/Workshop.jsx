@@ -18,7 +18,11 @@ export default function Workshop({ name }) {
         visible={opened}
         onRequestClose={() => setOpened(false)}
       >
-        <WorkshopSummary name={name} description="This is the workshop description where you can find information about what it is" onClose={() => setOpened(false)}/>
+        <WorkshopSummary
+          name={name}
+          description="This is the workshop description where you can find information about what it is"
+          onClose={() => setOpened(false)}
+        />
       </Modal>
       <Text>
         <h2>Workshop {name}</h2>
