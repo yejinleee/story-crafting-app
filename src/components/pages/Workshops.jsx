@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Button, FlatList } from "react-native-web";
 import Workshop from "../elements/workshop/Workshop";
+import Page from "./Page";
 
 function Item({ item }) {
   return (
@@ -19,10 +20,7 @@ export default function Workshops() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text>
-        <h1>Workshops</h1>
-      </Text>
+    <Page title="Workshops">
       <FlatList
         style={styles.workshopGrid}
         numColumns={2}
@@ -30,17 +28,11 @@ export default function Workshops() {
         renderItem={Item}
       />
       <Button title="Add" onPress={onAddButton}/>
-    </View>
+    </Page>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    height: "100vh",
-    width: "100vw",
-    padding: "1em",
-    flex: 2
-  },
   workshopGrid: {
     width: "100%"
   },
