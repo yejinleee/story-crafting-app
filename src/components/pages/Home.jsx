@@ -6,8 +6,8 @@ import Page from "./Page";
 export default function Home({ navigation }) {
   return (
     <Page title="Home">
-        <Button title="workshops" onPress={() => navigation.navigate('Workshops')}/>
-        <Button title="account" onPress={() => navigation.navigate('Profile')}/>
+        <MainButton title="Workshops" onPress={() => navigation.navigate('Workshops')}/>
+        <MainButton title="Account" onPress={() => navigation.navigate('Profile')}/>
         <MainButton title="Go to account"/>
     </Page>
   );
