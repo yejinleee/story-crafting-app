@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Image, StyleSheet, Text, View, Button } from "react-native";
+import { theme } from "../../style/theme.style";
 import Divider from "../elements/layout/Divider";
 import Page from "./Page";
 
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
   avatarSpace: {
     width: "100%",
     display: "flex",
-    gap: 20,
+    gap: theme.spacing.l,
     alignItems: "center"
   },
   avatar: {
@@ -38,11 +39,5 @@ const styles = StyleSheet.create({
     width: 120,
     borderRadius: 100,
     backgroundColor: "blue"
-  },
-  item: {
-    flex: 1,
-    maxWidth: "50%", // 100% devided by the number of rows you want
-    alignItems: "center",
-    padding: 4
   }
 });

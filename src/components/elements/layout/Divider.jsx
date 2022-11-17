@@ -1,13 +1,14 @@
 import { View } from "react-native";
+import { theme } from "../../../style/theme.style";
 
 export default function Divider(props) {
   return (
     <View
       {...props}
       style={{
-        borderBottomColor: "black",
+        borderBottomColor: theme.colors.secondary,
         borderBottomWidth: "1px",
-        marginVertical: "1em"
+        marginVertical: theme.spacing.m
       }}
     ></View>
   );
