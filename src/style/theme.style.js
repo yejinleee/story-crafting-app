@@ -22,6 +22,12 @@ export const theme = {
     l: 16,
     xl: 24
   },
+  radius: {
+    s: 4,
+    m: 16,
+    l: 16,
+    xl: 24
+  },
   textVariants: {
     header: {
       fontFamily: "Raleway",

@@ -15,9 +15,9 @@ export default function Page({ title, children }) {
 
 const styles = StyleSheet.create({
   container: {
-    height: "100vh",
-    width: "100vw",
-    padding: "1em",
+    height: "100%",
+    width: "100%",
+    padding: theme.spacing.m,
     backgroundColor: theme.colors.background,
     flex: 2
   }
