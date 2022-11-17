@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Image, StyleSheet, Text, View, Button } from "react-native";
 import { theme } from "../../style/theme.style";
+import MainButton from "../elements/button/MainButton";
 import Divider from "../elements/layout/Divider";
 import Page from "./Page";
 
@@ -22,7 +23,7 @@ export default function Account() {
         <Text>name</Text>
       </View>
       <Divider/>
-      <Button title="Add" onPress={onAddButton} />
+      <MainButton title="Refresh" onPress={onAddButton} />
     </Page>
   );
 }

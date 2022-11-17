@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button, FlatList } from "react-native";
 import Workshop from "../elements/workshop/Workshop";
 import Page from "./Page";
 import { theme } from "../../style/theme.style";
+import MainButton from "../elements/button/MainButton";
 
 function Item({ item }) {
   return (
@@ -27,7 +28,7 @@ export default function Workshops() {
         data={[...Array(debugCount)].map((_, i) => "#" + i)}
         renderItem={Item}
       />
-      <Button title="Add" onPress={onAddButton}/>
+      <MainButton title="Add" onPress={onAddButton}/>
     </Page>
   );
 }

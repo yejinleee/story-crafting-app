@@ -8,7 +8,6 @@ export default function Home({ navigation }) {
     <Page title="Home">
         <MainButton title="Workshops" onPress={() => navigation.navigate('Workshops')}/>
         <MainButton title="Account" onPress={() => navigation.navigate('Profile')}/>
-        <MainButton title="Go to account"/>
     </Page>
   );
 }

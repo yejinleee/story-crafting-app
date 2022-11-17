@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal, Pressable, StyleSheet, Text, View, Button, TouchableOpacity } from "react-native";
+import MainButton from "../button/MainButton";
 
 export default function WorkshopSummary({ name, description, onClose }) {
   return (
@@ -13,7 +14,7 @@ export default function WorkshopSummary({ name, description, onClose }) {
           Workshop {name}
           {description}
         </Text>
-        <Button  title="Start"></Button>
+        <MainButton  title="Start"></MainButton>
       </View>
     </View>
   );

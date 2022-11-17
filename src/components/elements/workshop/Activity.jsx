@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal, Pressable, StyleSheet, Text, View, Button, TouchableOpacity } from "react-native";
+import MainButton from "../button/MainButton";
 
 export default function Activity({ name, description, onClose }) {
   return (
@@ -15,7 +16,7 @@ export default function Activity({ name, description, onClose }) {
         </Text>
         {/* <Button onPress={onClose && onClose} title="Close"></Button> */}
         <br />
-        <Button title="Start"></Button>
+        <MainButton title="Start"></MainButton>
       </View>
     </View>
   );
