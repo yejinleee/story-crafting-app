@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet } from "react-native";
-import { Button, FlatList } from "react-native-web";
+import { StyleSheet, Button } from "react-native";
 import Page from "./Page";
 
 export default function Home({ navigation }) {

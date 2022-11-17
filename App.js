@@ -1,9 +1,8 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { Button } from "react-native-web";
+import { StyleSheet} from "react-native";
+import Activity from "./src/components/elements/workshop/Activity";
 import Account from "./src/components/pages/Account";
 import Home from "./src/components/pages/Home";
 import Workshops from "./src/components/pages/Workshops";
@@ -20,6 +19,7 @@ export default function App() {
         />
         <Stack.Screen name="Profile" component={Account} />
         <Stack.Screen name="Workshops" component={Workshops} />
+        <Stack.Screen name="Activity" component={Activity} options={{activityId: 0}} />
       </Stack.Navigator>
       {/* <View style={styles.container}>
         <Workshops />

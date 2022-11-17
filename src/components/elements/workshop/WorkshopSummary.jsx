@@ -1,6 +1,5 @@
 import React from "react";
-import { Modal, Pressable, StyleSheet, Text, View } from "react-native";
-import { Button, TouchableOpacity } from "react-native-web";
+import { Modal, Pressable, StyleSheet, Text, View, Button, TouchableOpacity } from "react-native";
 
 export default function WorkshopSummary({ name, description, onClose }) {
   return (
@@ -11,12 +10,10 @@ export default function WorkshopSummary({ name, description, onClose }) {
       ></Pressable>
       <View onPress={() => {}} style={styles.window}>
         <Text>
-          <h2>Workshop {name}</h2>
-          <p>{description}</p>
+          Workshop {name}
+          {description}
         </Text>
-        {/* <Button onPress={onClose && onClose} title="Close"></Button> */}
-        <br/>
-        <Button title="Start"></Button>
+        <Button  title="Start"></Button>
       </View>
     </View>
   );

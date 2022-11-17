@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { Button, FlatList } from "react-native-web";
+import { StyleSheet, Text, View, Button, FlatList } from "react-native";
 import Workshop from "../elements/workshop/Workshop";
 import Page from "./Page";
 

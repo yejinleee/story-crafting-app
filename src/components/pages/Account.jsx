@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
-import { Button, FlatList } from "react-native-web";
+import { Image, StyleSheet, Text, View, Button } from "react-native";
 import Divider from "../elements/layout/Divider";
-import Workshop from "../elements/workshop/Workshop";
 import Page from "./Page";
 
 export default function Account() {

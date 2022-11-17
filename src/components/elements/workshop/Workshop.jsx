@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Modal, StyleSheet, Text, View } from "react-native";
-import { TouchableOpacity } from "react-native-web";
+import { Modal, StyleSheet, Text, TouchableOpacity } from "react-native";
 import WorkshopSummary from "./WorkshopSummary";
 
 export default function Workshop({ name }) {
