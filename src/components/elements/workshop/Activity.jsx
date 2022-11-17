@@ -11,8 +11,8 @@ export default function Activity({ name, description, onClose }) {
       ></Pressable>
       <View onPress={() => {}} style={styles.window}>
         <Text>
-          <h2>Workshop {name}</h2>
-          <p>{description}</p>
+          Workshop {name}
+          {description}
         </Text>
         {/* <Button onPress={onClose && onClose} title="Close"></Button> */}
         <br />

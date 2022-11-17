@@ -30,11 +30,11 @@ const styles = StyleSheet.create({
     height: "10%"
   },
   window: {
-    padding: "0.5em",
+    // padding: "0.5em",
     borderRadius: 12,
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
-    margin: "0em",
+    // margin: "0em",
     backgroundColor: "lightgrey",
     height: "100%",
     textAlign: "center"
