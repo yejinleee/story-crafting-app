@@ -7,7 +7,7 @@ export default function Divider(props) {
       style={{
         borderBottomColor: "black",
         borderBottomWidth: "1px",
-        marginVertical: "1em"
+        // marginVertical: "1em"
       }}
     ></View>
   );

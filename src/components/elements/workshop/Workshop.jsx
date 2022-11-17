@@ -24,7 +24,7 @@ export default function Workshop({ name }) {
         />
       </Modal>
       <Text>
-        <h2>Workshop {name}</h2>
+        Workshop {name}
       </Text>
     </TouchableOpacity>
   );
@@ -32,7 +32,7 @@ export default function Workshop({ name }) {
 
 const styles = StyleSheet.create({
   container: {
-    padding: "0.5em",
+    // padding: "0.5em",
     borderRadius: 12,
     backgroundColor: "lightgrey",
     width: "100%"
