@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, Button, FlatList } from "react-native";
 import Workshop from "../elements/workshop/Workshop";
 import Page from "./Page";
+import { theme } from "../../style/theme.style";
 
 function Item({ item }) {
   return (
@@ -39,6 +40,6 @@ const styles = StyleSheet.create({
     flex: 1,
     maxWidth: "50%", // 100% devided by the number of rows you want
     alignItems: "center",
-    padding: 4
+    padding: theme.spacing.s
   }
 });

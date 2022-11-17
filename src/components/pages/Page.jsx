@@ -1,12 +1,13 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { theme } from "../../style/theme.style";
 
 export default function Page({ title, children }) {
   return (
     <View style={styles.container}>
-      <Text>
-        {title}
-      </Text>
+      {/* <Text>
+        <h1>{title}</h1>
+      </Text> */}
       {children}
     </View>
   );
@@ -14,9 +15,10 @@ export default function Page({ title, children }) {
 
 const styles = StyleSheet.create({
   container: {
-    // height: "100vh",
-    // width: "100vw",
-    // padding: "1em",
+    height: "100%",
+    width: "100%",
+    padding: theme.spacing.m,
+    backgroundColor: theme.colors.background,
     flex: 2
   }
 });

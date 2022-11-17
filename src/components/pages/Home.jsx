@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Button } from "react-native";
+import MainButton from "../elements/button/MainButton";
 import Page from "./Page";
 
 export default function Home({ navigation }) {
@@ -7,6 +8,7 @@ export default function Home({ navigation }) {
     <Page title="Home">
         <Button title="workshops" onPress={() => navigation.navigate('Workshops')}/>
         <Button title="account" onPress={() => navigation.navigate('Profile')}/>
+        <MainButton title="Go to account"/>
     </Page>
   );
 }
