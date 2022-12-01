@@ -8,6 +8,7 @@ import Home from "./src/components/pages/Home";
 import Workshops from "./src/components/pages/Workshops";
 import { theme } from "./src/style/theme.style";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -45,10 +46,38 @@ export default function App() {
         />
       </Stack.Navigator> */}
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Workshop" component={Workshops} />
-        <Tab.Screen name="Chat" component={Account} />
-        <Tab.Screen name="Profile" component={Account} />
+        <Tab.Screen
+          options={{
+            tabBarIcon: ({ color }) =>
+              <Ionicons name="home" color={color} size={26} />
+          }}
+          name="Home"
+          component={Home}
+        />
+        <Tab.Screen
+          options={{
+            tabBarIcon: ({ color }) =>
+              <Ionicons name="flag-outline" color={color} size={26} />
+          }}
+          name="Workshop"
+          component={Workshops}
+        />
+        <Tab.Screen
+          options={{
+            tabBarIcon: ({ color }) =>
+              <Ionicons name="chatbubble-ellipses-outline" color={color} size={26} />
+          }}
+          name="Chat"
+          component={Account}
+        />
+        <Tab.Screen
+          options={{
+            tabBarIcon: ({ color }) =>
+              <Ionicons name="person-outline" color={color} size={26} />
+          }}
+          name="Profile"
+          component={Account}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
