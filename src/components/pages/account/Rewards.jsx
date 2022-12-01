@@ -1,9 +1,10 @@
-import { Text } from "react-native";
+import { Text, View } from "react-native";
+import Page from "../Page";
 
 export default function Rewards() {
   return (
-    <view>
+    <Page>
       <Text>Rewards</Text>
-    </view>
+    </Page>
   );
 }

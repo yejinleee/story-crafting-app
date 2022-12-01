@@ -1,9 +1,10 @@
 import { Text, View } from "react-native";
+import Page from "../Page";
 
 export default function Backpack() {
   return (
-    <View>
+    <Page>
       <Text>Backpack</Text>
-    </View>
+    </Page>
   );
 }

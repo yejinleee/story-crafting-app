@@ -23,7 +23,7 @@ export default function Account({ navigation }) {
   }
 
   const Selector = ({ icon, name, onClick }) => (
-    <TouchableOpacity onPress={onClick} style={styles.selector}>
+    <TouchableOpacity onPress={onClick} style={{...theme.style.card, ...styles.selector}}>
       <Text style={styles.title}>{name}</Text>
       <View style={styles.iconSpace}>
         <Ionicons name={icon} size={48} />
@@ -32,7 +32,7 @@ export default function Account({ navigation }) {
   );
 
   const Profile = () => (
-    <>
+    <Page>
       <View style={styles.avatarSpace}>
         <View style={styles.avatarSelector}>
           <Selector
@@ -56,22 +56,24 @@ export default function Account({ navigation }) {
       </View>
       <Divider />
       <Calendar />
-    </>
+    </Page>
   );
 
   return (
-    <Page title="Account">
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false
-        }}
-      >
-        <Stack.Screen name="Profile" component={Profile} />
-        <Stack.Screen name="Backpack" component={Backpack} />
-        <Stack.Screen name="Avatar" component={Avatar} />
-        <Stack.Screen name="Rewards" component={Rewards} />
-      </Stack.Navigator>
-    </Page>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        screenOptions: {
+          backgroundColor: "white",
+          screenStyle: { backgroundColor: "blue" }
+        }
+      }}
+    >
+      <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="Backpack" component={Backpack} />
+      <Stack.Screen name="Avatar" component={Avatar} />
+      <Stack.Screen name="Rewards" component={Rewards} />
+    </Stack.Navigator>
   );
 }
 
@@ -109,9 +111,8 @@ const styles = StyleSheet.create({
   },
   selector: {
     flex: 1,
-    borderRadius: theme.radius.m,
-    backgroundColor: theme.colors.card,
-    display: "flex"
+    display: "flex",
+    padding: 0
   },
   selectors: {
     gap: theme.spacing.l,

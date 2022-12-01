@@ -68,7 +68,7 @@ export default function App() {
               <Ionicons name="chatbubble-ellipses-outline" color={color} size={26} />
           }}
           name="Chat"
-          component={Account}
+          component={Home}
         />
         <Tab.Screen
           options={{
