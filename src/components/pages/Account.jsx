@@ -6,8 +6,16 @@ import Divider from "../elements/layout/Divider";
 import Page from "./Page";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Calendar from "../elements/profile/Calendar";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Home from "./Home";
+import { TouchableOpacity } from "react-native-web";
+import Backpack from "./account/Backpack";
+import Avatar from "./account/Avatar";
+import Rewards from "./account/Rewards";
 
-export default function Account() {
+const Stack = createNativeStackNavigator();
+
+export default function Account({ navigation }) {
   const [seed, setSeed] = useState(0);
 
   function onAddButton() {
@@ -15,27 +23,54 @@ export default function Account() {
   }
 
   const Selector = ({ icon, name, onClick }) => (
-    <View style={styles.selector}>
+    <TouchableOpacity onPress={onClick} style={styles.selector}>
       <Text style={styles.title}>{name}</Text>
       <View style={styles.iconSpace}>
-      <Ionicons name={icon} size={48} />
+        <Ionicons name={icon} size={48} />
       </View>
-    </View>
+    </TouchableOpacity>
+  );
+
+  const Profile = () => (
+    <>
+      <View style={styles.avatarSpace}>
+        <View style={styles.avatarSelector}>
+          <Selector
+            name="Avatar"
+            icon="walk-outline"
+            onClick={() => navigation.navigate("Avatar")}
+          />
+        </View>
+        <View style={styles.selectors}>
+          <Selector
+            name="Backpack"
+            icon="briefcase-outline"
+            onClick={() => navigation.navigate("Backpack")}
+          />
+          <Selector
+            name="Rewards"
+            icon="trophy-outline"
+            onClick={() => navigation.navigate("Rewards")}
+          />
+        </View>
+      </View>
+      <Divider />
+      <Calendar />
+    </>
   );
 
   return (
     <Page title="Account">
-      <View style={styles.avatarSpace}>
-        <View style={styles.avatarSelector}>
-          <Selector name="Avatar" icon="walk-outline" />
-        </View>
-        <View style={styles.selectors}>
-          <Selector name="Backpack" icon="briefcase-outline" />
-          <Selector name="Rewards" icon="trophy-outline" />
-        </View>
-      </View>
-      <Divider />
-      <Calendar/>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false
+        }}
+      >
+        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Backpack" component={Backpack} />
+        <Stack.Screen name="Avatar" component={Avatar} />
+        <Stack.Screen name="Rewards" component={Rewards} />
+      </Stack.Navigator>
     </Page>
   );
 }
@@ -55,7 +90,7 @@ const styles = StyleSheet.create({
   avatarSelector: {
     flex: 1,
     display: "flex",
-    height: "100%",
+    height: "100%"
   },
   title: {
     borderRadius: theme.radius.l,
@@ -76,7 +111,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: theme.radius.m,
     backgroundColor: theme.colors.card,
-    display: "flex",
+    display: "flex"
   },
   selectors: {
     gap: theme.spacing.l,

@@ -59,7 +59,7 @@ export default function App() {
             tabBarIcon: ({ color }) =>
               <Ionicons name="flag-outline" color={color} size={26} />
           }}
-          name="Workshop"
+          name="Workshops"
           component={Workshops}
         />
         <Tab.Screen
