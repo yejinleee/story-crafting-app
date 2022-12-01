@@ -15,7 +15,8 @@ export const theme = {
     primaryForeground: "#FFFFFF",
     secondary: palette.grey,
     success: palette.green,
-    failure: palette.red
+    failure: palette.red,
+    card: "rgba(52, 52, 52, 0.2)"
   },
   spacing: {
     xs: 2,
