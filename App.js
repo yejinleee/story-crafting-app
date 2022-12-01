@@ -1,14 +1,13 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet } from "react-native";
 import Activity from "./src/components/elements/workshop/Activity";
-import Account from "./src/components/pages/Account";
-import Home from "./src/components/pages/Home";
-import Workshops from "./src/components/pages/Workshops";
 import { theme } from "./src/style/theme.style";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import { useState } from "react";
+import MainNavigator from './src/components/pages/MainNavigator';
+import Onboarding from './src/components/pages/Onboarding';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -20,9 +19,27 @@ export default function App() {
       borderBottomWidth: "0"
     }
   };
+  const [loading, setLoading] = useState(true); //for splash screen
+  const [isLogin, setIsLogin] = useState(true);
+
+  useEffect(() => {
+    const onboarding = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    return () => clearTimeout(onboarding);
+  }, []);
 
   return (
     <NavigationContainer>
+        <Stack.Navigator screenOptions={{headerShown: false, gestureEnabled: false}}>
+          {loading ? (
+            <Stack.Screen name="Onboarding" component={Onboarding} />
+          ) : isLogin ? (
+            <Stack.Screen name="MainNavigator" component={MainNavigator} />
+          ) : (
+            <Stack.Screen name="MainNavigator" component={MainNavigator} />
+          )}
+        </Stack.Navigator>      
       {/* <Stack.Navigator>
         <Stack.Screen
           name="Home"
@@ -45,40 +62,7 @@ export default function App() {
           options={{ ...navigationOptions, activityId: 0 }}
         />
       </Stack.Navigator> */}
-      <Tab.Navigator>
-        <Tab.Screen
-          options={{
-            tabBarIcon: ({ color }) =>
-              <Ionicons name="home" color={color} size={26} />
-          }}
-          name="Home"
-          component={Home}
-        />
-        <Tab.Screen
-          options={{
-            tabBarIcon: ({ color }) =>
-              <Ionicons name="flag-outline" color={color} size={26} />
-          }}
-          name="Workshop"
-          component={Workshops}
-        />
-        <Tab.Screen
-          options={{
-            tabBarIcon: ({ color }) =>
-              <Ionicons name="chatbubble-ellipses-outline" color={color} size={26} />
-          }}
-          name="Chat"
-          component={Account}
-        />
-        <Tab.Screen
-          options={{
-            tabBarIcon: ({ color }) =>
-              <Ionicons name="person-outline" color={color} size={26} />
-          }}
-          name="Profile"
-          component={Account}
-        />
-      </Tab.Navigator>
+
     </NavigationContainer>
   );
 }
