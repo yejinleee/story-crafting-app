@@ -50,6 +50,12 @@ export const theme = {
       fontSize: 36,
       fontWeight: "bold"
     },
+    title: {
+      fontSize: 24,
+      fontWeight: "bold",
+      marginBottom: spacing.m,
+      marginTop: spacing.l,
+    },
     body: {
       fontFamily: "Merriweather",
       fontSize: 16

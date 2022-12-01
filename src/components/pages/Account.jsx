@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     width: "100%",
     display: "flex",
     flexDirection: "row",
-    height: "45%",
+    height: 256,
     gap: theme.spacing.l,
     padding: theme.spacing.l,
     alignItems: "center",
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   title: {
     borderRadius: theme.radius.l,
     paddingVertical: theme.spacing.s,
-    marginHorizontal: theme.spacing.l,
+    marginHorizontal: theme.spacing.m,
     marginTop: theme.spacing.m,
     textAlign: "center",
     color: theme.colors.primaryForeground,

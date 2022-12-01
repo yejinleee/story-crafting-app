@@ -1,27 +1,10 @@
 import { Dimensions, FlatList, StyleSheet, Text, View } from "react-native";
 import { theme } from "../../../style/theme.style";
 import Divider from "../../elements/layout/Divider";
+import GridList from "../../elements/layout/GridList";
 import Page from "../Page";
 
 export default function Avatar() {
-  const Item = ({ item }) => (
-    <View
-      style={{
-        borderRadius: 1000,
-        textAlign: "center",
-        // padding: theme.spacing.s,
-        backgroundColor: theme.colors.card,
-        flex: 1,
-        margin: theme.spacing.l,
-        width: "auto",
-        aspectRatio: "1/1",
-        // height: Dimensions.get('window').width / 4,
-      }}
-    >
-      <Text>{item}</Text>
-    </View>
-  );
-
   return (
     <Page>
       <View style={styles.avatarSpace}>
@@ -29,15 +12,8 @@ export default function Avatar() {
         <Text>Name</Text>
       </View>
       <Divider />
-      <Text>My wardrobe</Text>
-      <View style={{ ...theme.style.card }}>
-        <FlatList
-          style={{ width: "100%", gap: 10 }}
-          numColumns={4}
-          data={[...Array(12)].map((_, i) => "#" + i)}
-          renderItem={Item}
-        />
-      </View>
+      <Text style={theme.textVariants.title}>My wardrobe</Text>
+      <GridList>{[...Array(16)].map((_, i) => i)}</GridList>
     </Page>
   );
 }
@@ -45,10 +21,10 @@ export default function Avatar() {
 const styles = StyleSheet.create({
   avatarSpace: {
     width: "100%",
-    height: "45%",
+    height: 256,
     display: "flex",
     textAlign: "center",
-    gap: theme.spacing.l
+    gap: theme.spacing.m
   },
   avatar: {
     flex: 1,
