@@ -4,37 +4,57 @@ const palette = {
   red: "#CD0E61",
   black: "#3a3f47",
   grey: "#9e9e9e",
-  white: "#f8f8f8"
+  white: "#ffffff"
+};
+
+const spacing = {
+  xs: 2,
+  s: 4,
+  m: 8,
+  l: 16,
+  xl: 24
+};
+
+const colors = {
+  background: palette.white,
+  foreground: palette.black,
+  primary: "#8B8A8A",
+  primaryForeground: "#FFFFFF",
+  secondary: palette.grey,
+  success: palette.green,
+  failure: palette.red,
+  card: "rgba(52, 52, 52, 0.1)"
+};
+
+const radius = {
+  s: 4,
+  m: 16,
+  l: 24,
+  xl: 40
 };
 
 export const theme = {
-  colors: {
-    background: palette.white,
-    foreground: palette.black,
-    primary: palette.black,
-    primaryForeground: "#FFFFFF",
-    secondary: palette.grey,
-    success: palette.green,
-    failure: palette.red
-  },
-  spacing: {
-    xs: 2,
-    s: 4,
-    m: 8,
-    l: 16,
-    xl: 24
-  },
-  radius: {
-    s: 4,
-    m: 16,
-    l: 24,
-    xl: 40
+  colors,
+  spacing,
+  radius,
+  style: {
+    card: {
+      backgroundColor: colors.card,
+      padding: spacing.l,
+      borderRadius: radius.m
+    }
   },
   textVariants: {
     header: {
       fontFamily: "Raleway",
       fontSize: 36,
       fontWeight: "bold"
+    },
+    title: {
+      fontSize: 24,
+      fontWeight: "bold",
+      marginBottom: spacing.m,
+      marginTop: spacing.l,
     },
     body: {
       fontFamily: "Merriweather",

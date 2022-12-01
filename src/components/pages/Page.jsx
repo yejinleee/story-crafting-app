@@ -1,24 +1,23 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { theme } from "../../style/theme.style";
 
 export default function Page({ title, children }) {
   return (
-    <View style={styles.container}>
-      {/* <Text>
-        <h1>{title}</h1>
-      </Text> */}
+    <ScrollView style={styles.container}>
       {children}
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    minHeight: "100%",
     height: "100%",
     width: "100%",
     padding: theme.spacing.m,
     backgroundColor: theme.colors.background,
-    flex: 2
+    display: "flex",
+    flex: 1
   }
 });

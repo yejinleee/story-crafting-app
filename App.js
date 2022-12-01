@@ -2,15 +2,12 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React, { useEffect } from "react";
 import { StyleSheet } from "react-native";
-import Activity from "./src/components/elements/workshop/Activity";
 import { theme } from "./src/style/theme.style";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useState } from "react";
-import MainNavigator from './src/components/pages/MainNavigator';
-import Onboarding from './src/components/pages/Onboarding';
+import MainNavigator from "./src/components/pages/MainNavigator";
+import Onboarding from "./src/components/pages/Onboarding";
 
 const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
 
 export default function App() {
   const navigationOptions = {
@@ -31,37 +28,15 @@ export default function App() {
 
   return (
     <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown: false, gestureEnabled: false}}>
-          {loading ? (
-            <Stack.Screen name="Onboarding" component={Onboarding} />
-          ) : isLogin ? (
-            <Stack.Screen name="MainNavigator" component={MainNavigator} />
-          ) : (
-            <Stack.Screen name="MainNavigator" component={MainNavigator} />
-          )}
-        </Stack.Navigator>      
-      {/* <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={navigationOptions}
-        />
-        <Stack.Screen
-          name="Profile"
-          component={Account}
-          options={navigationOptions}
-        />
-        <Stack.Screen
-          name="Workshops"
-          component={Workshops}
-          options={navigationOptions}
-        />
-        <Stack.Screen
-          name="Activity"
-          component={Activity}
-          options={{ ...navigationOptions, activityId: 0 }}
-        />
-      </Stack.Navigator> */}
+      <Stack.Navigator
+        screenOptions={{ headerShown: false, gestureEnabled: false }}
+      >
+        {loading
+          ? <Stack.Screen name="Onboarding" component={Onboarding} />
+          : isLogin
+            ? <Stack.Screen name="MainNavigator" component={MainNavigator} />
+            : <Stack.Screen name="MainNavigator" component={MainNavigator} />}
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
