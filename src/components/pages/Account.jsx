@@ -26,7 +26,7 @@ export default function Account({ navigation }) {
     <TouchableOpacity onPress={onClick} style={{...theme.style.card, ...styles.selector}}>
       <Text style={styles.title}>{name}</Text>
       <View style={styles.iconSpace}>
-        <Ionicons name={icon} size={48} />
+        <Ionicons name={icon} color={theme.colors.primary} size={48} />
       </View>
     </TouchableOpacity>
   );
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     marginTop: theme.spacing.m,
     textAlign: "center",
     color: theme.colors.primaryForeground,
-    backgroundColor: theme.colors.card
+    backgroundColor: theme.colors.primary
   },
   iconSpace: {
     display: "flex",

@@ -16,7 +16,7 @@ export default function Slider({ value, outOf }) {
           ]}
         ><Text>{value} / {outOf}</Text></View>
       </View>
-      <Ionicons name={"cafe-outline"} size={48} />
+      <Ionicons name={"cafe-outline"} color={theme.colors.primary} size={48} />
     </View>
   );
 }

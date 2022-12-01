@@ -18,7 +18,7 @@ const spacing = {
 const colors = {
   background: palette.white,
   foreground: palette.black,
-  primary: palette.black,
+  primary: "#8B8A8A",
   primaryForeground: "#FFFFFF",
   secondary: palette.grey,
   success: palette.green,
