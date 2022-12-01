@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Modal, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { theme } from "../../../style/theme.style";
 import WorkshopSummary from "./WorkshopSummary";
 
 export default function Workshop({ name }) {
@@ -32,7 +33,7 @@ export default function Workshop({ name }) {
 
 const styles = StyleSheet.create({
   container: {
-    // padding: "0.5em",
+    padding: theme.spacing.l,
     borderRadius: 12,
     backgroundColor: "lightgrey",
     width: "100%"

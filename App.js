@@ -7,8 +7,10 @@ import Account from "./src/components/pages/Account";
 import Home from "./src/components/pages/Home";
 import Workshops from "./src/components/pages/Workshops";
 import { theme } from "./src/style/theme.style";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   const navigationOptions = {
@@ -20,7 +22,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      {/* <Stack.Navigator>
         <Stack.Screen
           name="Home"
           component={Home}
@@ -41,7 +43,13 @@ export default function App() {
           component={Activity}
           options={{ ...navigationOptions, activityId: 0 }}
         />
-      </Stack.Navigator>
+      </Stack.Navigator> */}
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Workshop" component={Workshops} />
+        <Tab.Screen name="Chat" component={Account} />
+        <Tab.Screen name="Profile" component={Account} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
