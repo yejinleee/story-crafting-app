@@ -49,7 +49,7 @@ export default function App() {
         <Tab.Screen
           options={{
             tabBarIcon: ({ color }) =>
-              <Ionicons name="home" color={color} size={26} />
+              <Ionicons name="add-circle-outline" color={color} size={26} />
           }}
           name="Home"
           component={Home}
