@@ -1,15 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { theme } from "../../style/theme.style";
 
 export default function Page({ title, children }) {
   return (
-    <View style={styles.container}>
-      {/* <Text>
-        <h1>{title}</h1>
-      </Text> */}
-      {children}
-    </View>
+    <SafeAreaView style={{flex:1}}>
+      <View style={styles.container}>
+        {children}
+      </View>
+    </SafeAreaView>
   );
 }
 

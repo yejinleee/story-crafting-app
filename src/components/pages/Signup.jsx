@@ -1,45 +1,57 @@
-import React from "react";
-import { useState } from "react";
-import { KeyboardAvoidingView, SafeAreaView, StatusBar, StyleSheet, Text, TextInput, View, Platform, TouchableOpacity } from "react-native";
-import { theme } from "../../style/theme.style";
+import React, { useState } from "react";
+import { StyleSheet, Button, Text, View, TextInput, KeyboardAvoidingView, Platform } from "react-native";
+import MainButton from "../elements/button/MainButton";
+import Divider from "../elements/layout/Divider";
+import Page from "./Page";
 
-const Signup =() => {
+export default function Signup({ navigation }) {
+    const [name, setName] = useState('');
+    const [lastname, setLastname] = useState('');
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [pw, setPw] = useState('');
-    const onpressClick = () => {
-        console.log('login');
+    const [checkpw, setCheckpw] = useState(''); 
+
+    const onpressNextstep = () => {
+        navigation.navigate('Create1character');
+        console.log('pressed next step in Signup');
     }
-    const onpressSignup = () => {
-        console.log('signup');
-    }
-    return (
-        <SafeAreaView style={styles.flex}>
-            <StatusBar barStyle={'dark-content'} backgroundColor="white" />
-            <View style={styles.container}>
-                <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} />
-                <Text>sign up</Text>
+    return(
+        <Page title="Signup">
+            <Text>Let's begin the journey</Text>
+            <Divider/>
+            <View style={{flex:1}}>
+                <Text>create an account</Text>
+                <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} >
+                    <TextInput style={styles.input} onChangeText={setName} value={name} placeholder={'Name'}/>
+                    <TextInput style={styles.input} onChangeText={setLastname} value={lastname} placeholder={'Last Name'}/>
+                    <TextInput style={styles.input} onChangeText={setUsername} value={username} placeholder={'Username'}/>
+                    <TextInput style={styles.input} onChangeText={setEmail} value={email} placeholder={'Email'}/>
+                    <TextInput style={styles.input} onChangeText={setPw} value={pw} placeholder={'Password'} />
+                    <TextInput style={styles.input} onChangeText={setCheckpw} value={checkpw} placeholder={'Repeat password'} />
+                </KeyboardAvoidingView>
             </View>
-        </SafeAreaView>
+            <MainButton title="next step" onPress={onpressNextstep}></MainButton>
+
+        </Page>
     );
 }
-export default Signup;
 
 const styles = StyleSheet.create({
-    flex: {flex: 1, alignItems: 'center', justifyContent: 'center'},
-    container: {
-        height: "100%",
-        width: "100%",
-        padding: theme.spacing.m,
-        backgroundColor: theme.colors.background,
-        flex: 2,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    input: {
-        width: '80%',
-        height: 40,
-        margin: 12,
-        borderWidth: 1,
-        padding: 10,
-      },
+  workshopGrid: {
+    width: "100%"
+  },
+  item: {
+    flex: 1,
+    maxWidth: "50%", // 100% devided by the number of rows you want
+    alignItems: "center",
+    padding: 4
+  },
+  input: {
+    width: '80%',
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
 });

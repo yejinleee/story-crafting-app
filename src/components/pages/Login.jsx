@@ -18,15 +18,16 @@ const Login =() => {
         <SafeAreaView style={styles.flex}>
             <StatusBar barStyle={'dark-content'} backgroundColor="white" />
             <View style={styles.container}>
-                <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} />
-                <TextInput style={styles.input} onChangeText={setEmail} value={email} placeholder={'Email'}/>
-                <TextInput style={styles.input} onChangeText={setPw} value={pw} placeholder={'Password'} />
-                <TouchableOpacity onPress={onpressClick}>
+                <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} >
+                    <TextInput style={styles.input} onChangeText={setEmail} value={email} placeholder={'Email'}/>
+                    <TextInput style={styles.input} onChangeText={setPw} value={pw} placeholder={'Password'} />
+                    <TouchableOpacity onPress={onpressClick}>
                     <Text>Login</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={onpressSignup}>
-                    <Text>sign up</Text>
-                </TouchableOpacity>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={onpressSignup}>
+                        <Text>sign up</Text>
+                    </TouchableOpacity>
+                </KeyboardAvoidingView>
             </View>
         </SafeAreaView>
     );
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     input: {
-        width: '80%',
+        width: '100%',
         height: 40,
         margin: 12,
         borderWidth: 1,
