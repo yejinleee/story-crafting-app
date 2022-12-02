@@ -8,7 +8,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useState } from "react";
 import MainNavigator from './src/components/pages/MainNavigator';
 import Onboarding from './src/components/pages/Onboarding';
-
+import Login from "./src/components/pages/Login";
+import { AuthNavigator } from "./src/components/pages/AuthNavigator";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -19,15 +20,16 @@ export default function App() {
       borderBottomWidth: "0"
     }
   };
-  const [loading, setLoading] = useState(true); //for splash screen
-  const [isLogin, setIsLogin] = useState(true);
+  const [loading, setLoading] = useState(false); //for splash screen
+  const [isLogin, setIsLogin] = useState(false);
 
-  useEffect(() => {
-    const onboarding = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-    return () => clearTimeout(onboarding);
-  }, []);
+  //온보딩용. 페이지 넘어가려면 주석 해제
+  // useEffect(() => {
+  //   const onboarding = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000);
+  //   return () => clearTimeout(onboarding);
+  // }, []);
 
   return (
     <NavigationContainer>
@@ -37,7 +39,7 @@ export default function App() {
           ) : isLogin ? (
             <Stack.Screen name="MainNavigator" component={MainNavigator} />
           ) : (
-            <Stack.Screen name="MainNavigator" component={MainNavigator} />
+            <Stack.Screen name="AuthNavigator" component={AuthNavigator} />
           )}
         </Stack.Navigator>      
       {/* <Stack.Navigator>
