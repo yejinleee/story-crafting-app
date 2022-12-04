@@ -64,7 +64,6 @@ export default function App() {
           options={{ ...navigationOptions, activityId: 0 }}
         />
       </Stack.Navigator> */}
-
     </NavigationContainer>
   );
 }
