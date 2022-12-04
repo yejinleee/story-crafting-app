@@ -4,6 +4,7 @@ import MainButton from "../../elements/button/MainButton";
 import Divider from "../../elements/layout/Divider";
 import Page from "../Page";
 import {useNavigation} from '@react-navigation/native';
+import { styleSystem } from "../../../style/styleSystem";
 
 export default function Create1character() {
     const navigation = useNavigation();
@@ -12,12 +13,11 @@ export default function Create1character() {
     }
     return(
         <Page title="Signup">
-            <Text>Let's begin the journey</Text>
-            <Divider/>
-            <View style={{flex:1}}>
-                <Text>Create your own character!</Text>
-
-            </View>
+            <View style={[styleSystem.center, {flex:1}]}>
+                <View style={[styles.circle, styleSystem.center]}>
+                </View>
+                <Text style={styles.text}>Create your own character!</Text>
+            </View> 
             <MainButton title="next step" onPress={onpressNextstep}></MainButton>
 
         </Page>
@@ -25,10 +25,14 @@ export default function Create1character() {
 }
 
 const styles = StyleSheet.create({
-  item: {
-    flex: 1,
-    maxWidth: "50%", // 100% devided by the number of rows you want
-    alignItems: "center",
-    padding: 4
+  circle:{
+    width: '141px',
+    height: '141px',
+    borderRadius: '50%',
+    backgroundColor: '#D9D9D9',
   },
+  text:{
+    top: '-77.5px',//half of radius of circle+ half of font size
+    position: 'relative',
+  }
 });
