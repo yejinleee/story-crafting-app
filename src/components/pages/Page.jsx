@@ -14,10 +14,12 @@ export default function Page({ title, children }) {
 
 const styles = StyleSheet.create({
   container: {
+    minHeight: "100%",
     height: "100%",
     width: "100%",
     padding: theme.spacing.m,
     backgroundColor: theme.colors.background,
-    flex: 2
+    display: "flex",
+    flex: 1
   }
 });

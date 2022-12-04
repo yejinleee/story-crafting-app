@@ -3,8 +3,9 @@ import Account from "./Account";
 import Home from "./Home";
 import Workshops from "./Workshops";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-const Tab = createBottomTabNavigator();
 import Ionicons from "@expo/vector-icons/Ionicons";
+
+const Tab = createBottomTabNavigator();
 
 const MainNavigator = () => {
     return(

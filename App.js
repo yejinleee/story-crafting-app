@@ -2,16 +2,13 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React, { useEffect } from "react";
 import { StyleSheet } from "react-native";
-import Activity from "./src/components/elements/workshop/Activity";
 import { theme } from "./src/style/theme.style";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useState } from "react";
 import MainNavigator from './src/components/pages/MainNavigator';
 import Onboarding from './src/components/pages/Onboarding';
 import Login from "./src/components/pages/Login";
 import { AuthNavigator } from "./src/components/pages/AuthNavigator";
 const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
 
 export default function App() {
   const navigationOptions = {
