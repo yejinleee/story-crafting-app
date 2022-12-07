@@ -1,4 +1,4 @@
-import { SafeAreaView, View, Text } from "react-native";
+import { SafeAreaView, View, Text, Button, TouchableOpacity } from "react-native";
 import Account from "./Account";
 import Home from "./Home";
 import Workshops from "./Workshops";
@@ -8,13 +8,18 @@ import Posting from "./Posting";
 
 const Tab = createBottomTabNavigator();
 
-const MainNavigator = () => {
+const MainNavigator = ({navigation}) => {
   return (
     <Tab.Navigator>
       <Tab.Screen
         options={{
           tabBarIcon: ({ color }) => (
             <Ionicons name="add-circle-outline" color={color} size={26} />
+          ),
+          headerRight: () => (
+            <TouchableOpacity onPress={() => navigation.navigate("CreatePost")}>
+              <Ionicons name="add-circle-outline" size={26} />
+            </TouchableOpacity>
           )
         }}
         name="Home"
