@@ -4,6 +4,7 @@ import Home from "./Home";
 import Workshops from "./Workshops";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import Posting from "./Posting";
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +18,7 @@ const MainNavigator = () => {
           )
         }}
         name="Home"
-        component={Home}
+        component={Posting}
       />
       <Tab.Screen
         options={{
