@@ -4,9 +4,10 @@ import React, { useEffect } from "react";
 import { StyleSheet } from "react-native";
 import { theme } from "./src/style/theme.style";
 import { useState } from "react";
-import MainNavigator from "./src/components/pages/MainNavigator";
-import Onboarding from "./src/components/pages/Onboarding";
-
+import MainNavigator from './src/components/pages/MainNavigator';
+import Onboarding from './src/components/pages/Onboarding';
+import Login from "./src/components/pages/Login";
+import { AuthNavigator } from "./src/components/pages/AuthNavigator";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -16,27 +17,50 @@ export default function App() {
       borderBottomWidth: "0"
     }
   };
-  const [loading, setLoading] = useState(true); //for splash screen
-  const [isLogin, setIsLogin] = useState(true);
+  const [loading, setLoading] = useState(false); //for splash screen
+  const [isLogin, setIsLogin] = useState(false);
 
-  useEffect(() => {
-    const onboarding = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-    return () => clearTimeout(onboarding);
-  }, []);
+  //온보딩용. 페이지 넘어가려면 주석 해제
+  // useEffect(() => {
+  //   const onboarding = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000);
+  //   return () => clearTimeout(onboarding);
+  // }, []);
 
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{ headerShown: false, gestureEnabled: false }}
-      >
-        {loading
-          ? <Stack.Screen name="Onboarding" component={Onboarding} />
-          : isLogin
-            ? <Stack.Screen name="MainNavigator" component={MainNavigator} />
-            : <Stack.Screen name="MainNavigator" component={MainNavigator} />}
-      </Stack.Navigator>
+        <Stack.Navigator screenOptions={{headerShown: false, gestureEnabled: false}}>
+          {loading ? (
+            <Stack.Screen name="Onboarding" component={Onboarding} />
+          ) : isLogin ? (
+            <Stack.Screen name="MainNavigator" component={MainNavigator} />
+          ) : (
+            <Stack.Screen name="AuthNavigator" component={AuthNavigator} />
+          )}
+        </Stack.Navigator>      
+      {/* <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={navigationOptions}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={Account}
+          options={navigationOptions}
+        />
+        <Stack.Screen
+          name="Workshops"
+          component={Workshops}
+          options={navigationOptions}
+        />
+        <Stack.Screen
+          name="Activity"
+          component={Activity}
+          options={{ ...navigationOptions, activityId: 0 }}
+        />
+      </Stack.Navigator> */}
     </NavigationContainer>
   );
 }
