@@ -1,4 +1,4 @@
-import { SafeAreaView, View, Text } from "react-native";
+import { SafeAreaView, View, Text, Image } from "react-native";
 import Account from "./Account";
 import Home from "./Home";
 import Workshops from "./Workshops";
@@ -10,39 +10,77 @@ const MainNavigator = () => {
     return(
         <Tab.Navigator>
         <Tab.Screen
-          options={{
-            tabBarIcon: ({ color }) =>
-              <Ionicons name="add-circle-outline" color={color} size={26} />
-          }}
           name="Home"
           component={Home}
+          options={{
+            tabBarIcon: ({focused}) =>{
+              if (focused) {
+                return (
+                  <Image source={require('../../assets/tab_bar_icons/icon_home_selected.png')} style={{width: 26, height: 26}} />
+                );
+              } else {
+                return (
+                  <Image source={require('../../assets/tab_bar_icons/icon_home.png')} style={{width: 26, height: 26}} />
+                );
+              }
+            },
+          }}
         />
         <Tab.Screen
-          options={{
-            tabBarIcon: ({ color }) =>
-              <Ionicons name="flag-outline" color={color} size={26} />
-          }}
           name="Workshop"
           component={Workshops}
+          options={{
+            tabBarIcon: ({focused}) =>{
+              if (focused) {
+                return (
+                  <Image source={require('../../assets/tab_bar_icons/icon_workshops_selected.png')} style={{width: 26, height: 26}} />
+                );
+              } else {
+                return (
+                  <Image source={require('../../assets/tab_bar_icons/icon_workshops.png')} style={{width: 26, height: 26}} />
+                );
+              }
+            },
+          }}
         />
         <Tab.Screen
-          options={{
-            tabBarIcon: ({ color }) =>
-              <Ionicons name="chatbubble-ellipses-outline" color={color} size={26} />
-          }}
           name="Chat"
           component={Account}
+          options={{
+            tabBarIcon: ({focused}) =>{
+              if (focused) {
+                return (
+                  <Image source={require('../../assets/tab_bar_icons/icon_chat_selected.png')} style={{width: 26, height: 26}} />
+                );
+              } else {
+                return (
+                  <Image source={require('../../assets/tab_bar_icons/icon_chat.png')} style={{width: 26, height: 26}} />
+                );
+              }
+            },
+          }}
         />
         <Tab.Screen
-          options={{
-            tabBarIcon: ({ color }) =>
-              <Ionicons name="person-outline" color={color} size={26} />
-          }}
           name="Profile"
           component={Account}
+          options={{
+            tabBarIcon: ({focused}) =>{
+              if (focused) {
+                return (
+                  <Image source={require('../../assets/tab_bar_icons/icon_profile_selected.png')} style={{width: 26, height: 26}} />
+                );
+              } else {
+                return (
+                  <Image source={require('../../assets/tab_bar_icons/icon_profile.png')} style={{width: 26, height: 26}} />
+                );
+              }
+            },
+          }}
         />
       </Tab.Navigator>
     )
 }
 
 export default MainNavigator;
+
+
