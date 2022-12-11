@@ -1,4 +1,4 @@
-const palette = {
+export const palette = {
   red: "#FF8E8E",
   green: "#C9F0CD",
   yellow: "#FFF7A1",

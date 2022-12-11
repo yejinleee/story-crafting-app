@@ -19,16 +19,16 @@ export default function App() {
       borderBottomWidth: "0"
     }
   };
-  const [loading, setLoading] = useState(false); //for splash screen
+  const [loading, setLoading] = useState(true); //for splash screen
   const [isLogin, setIsLogin] = useState(false);
 
   //온보딩용. 페이지 넘어가려면 주석 해제
-  // useEffect(() => {
-  //   const onboarding = setTimeout(() => {
-  //     setLoading(false);
-  //   }, 2000);
-  //   return () => clearTimeout(onboarding);
-  // }, []);
+  useEffect(() => {
+    const onboarding = setTimeout(() => {
+      setLoading(false);
+    }, 500);
+    return () => clearTimeout(onboarding);
+  }, []);
 
   return (
     <NavigationContainer>

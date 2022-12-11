@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, Pressable, StyleSheet, Text, View, Button, TouchableOpacity } from "react-native";
-import MainButton from "../button/MainButton";
+import MainButton from "../button/NextStepButton";
 
 export default function WorkshopSummary({ name, description, onClose }) {
   return (

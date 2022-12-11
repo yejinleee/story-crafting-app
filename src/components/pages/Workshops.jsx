@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button, FlatList } from "react-native";
 import Workshop from "../elements/workshop/Workshop";
 import Page from "./Page";
 import { theme } from "../../style/theme.style";
-import MainButton from "../elements/button/MainButton";
+import MainButton from "../elements/button/NextStepButton";
 
 function Item({ item }) {
   return (
