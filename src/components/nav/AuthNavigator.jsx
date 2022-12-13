@@ -1,10 +1,10 @@
 import React from 'react';
-import Login from './Login';
-import Signup from './Signup';
-import Create1character from './createAvatar/create1character';
-import Create2backpack from './createAvatar/create2backpack';
-import Create3interest from './createAvatar/create3interest';
-import Create4goals from './createAvatar/create4goals';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
+import Create1character from '../pages/createAvatar/create1character';
+import Create2backpack from '../pages/createAvatar/create2backpack';
+import Create3interest from '../pages/createAvatar/create3interest';
+import Create4goals from '../pages/createAvatar/create4goals';
 import MainNavigator from './MainNavigator';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();

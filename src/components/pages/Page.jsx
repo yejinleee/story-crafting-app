@@ -18,6 +18,6 @@ const styles = StyleSheet.create({
     width: "100%",
     // padding: theme.spacing.m,
     backgroundColor: theme.colors.background,
-    flex: 2
+    flex: 2,
   }
 });

@@ -5,10 +5,11 @@ import { StyleSheet } from "react-native";
 import { theme } from "./src/style/theme.style";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useState } from "react";
-import MainNavigator from './src/components/pages/MainNavigator';
 import Onboarding from './src/components/pages/Onboarding';
-import Login from "./src/components/pages/Login";
-import { AuthNavigator } from "./src/components/pages/AuthNavigator";
+import { AuthNavigator } from "./src/components/nav/AuthNavigator";
+import MainNavigator from "./src/components/nav/MainNavigator";
+import { AvatarNavigator } from "./src/components/nav/AvatarNavigator";
+
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -21,6 +22,7 @@ export default function App() {
   };
   const [loading, setLoading] = useState(true); //for splash screen
   const [isLogin, setIsLogin] = useState(false);
+  const [madeAvatar, setMadeavatar] = useState(false);
 
   //온보딩용. 페이지 넘어가려면 주석 해제
   useEffect(() => {
@@ -37,33 +39,12 @@ export default function App() {
             <Stack.Screen name="Onboarding" component={Onboarding} />
           ) : isLogin ? (
             <Stack.Screen name="MainNavigator" component={MainNavigator} />
-          ) : (
+          ) : madeAvatar ? (
             <Stack.Screen name="AuthNavigator" component={AuthNavigator} />
+          ) : (
+            <Stack.Screen name="AvatarNavigator" component={AvatarNavigator} />
           )}
         </Stack.Navigator>      
-      {/* <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={navigationOptions}
-        />
-        <Stack.Screen
-          name="Profile"
-          component={Account}
-          options={navigationOptions}
-        />
-        <Stack.Screen
-          name="Workshops"
-          component={Workshops}
-          options={navigationOptions}
-        />
-        <Stack.Screen
-          name="Activity"
-          component={Activity}
-          options={{ ...navigationOptions, activityId: 0 }}
-        />
-      </Stack.Navigator> */}
-
     </NavigationContainer>
   );
 }

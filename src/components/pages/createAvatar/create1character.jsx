@@ -26,8 +26,8 @@ export default function Create1character() {
 
 const styles = StyleSheet.create({
   circle:{
-    width: '141px',
-    height: '141px',
+    width: 141,
+    height: 141,
     borderRadius: '50%',
     backgroundColor: '#D9D9D9',
   },

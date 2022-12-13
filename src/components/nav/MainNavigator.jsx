@@ -1,7 +1,7 @@
 import { SafeAreaView, View, Text, Image } from "react-native";
-import Account from "./Account";
-import Home from "./Home";
-import Workshops from "./Workshops";
+import Account from "../pages/Account";
+import Home from '../pages/Home'
+import Workshops from "../pages/Workshops";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 const Tab = createBottomTabNavigator();
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -82,5 +82,3 @@ const MainNavigator = () => {
 }
 
 export default MainNavigator;
-
-
