@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Button, Text, View, TextInput, KeyboardAvoidingView, Platform } from "react-native";
-import MainButton from "../../elements/button/MainButton";
+import MainButton from "../../elements/button/NextStepButton";
 import Divider from "../../elements/layout/Divider";
 import Page from "../Page";
 import {useNavigation} from '@react-navigation/native';

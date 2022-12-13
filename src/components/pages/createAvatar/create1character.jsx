@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Button, Text, View, TextInput, KeyboardAvoidingView, Platform } from "react-native";
-import MainButton from "../../elements/button/MainButton";
+import MainButton from "../../elements/button/NextStepButton";
 import Divider from "../../elements/layout/Divider";
 import Page from "../Page";
 import {useNavigation} from '@react-navigation/native';
@@ -26,8 +26,8 @@ export default function Create1character() {
 
 const styles = StyleSheet.create({
   circle:{
-    width: '141px',
-    height: '141px',
+    width: 141,
+    height: 141,
     borderRadius: '50%',
     backgroundColor: '#D9D9D9',
   },
