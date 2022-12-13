@@ -3,7 +3,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React, { useEffect } from "react";
 import { StyleSheet } from "react-native";
 import { theme } from "./src/style/theme.style";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useState } from "react";
 import Onboarding from './src/components/pages/Onboarding';
 import { AuthNavigator } from "./src/components/nav/AuthNavigator";
@@ -11,7 +10,6 @@ import MainNavigator from "./src/components/nav/MainNavigator";
 import { AvatarNavigator } from "./src/components/nav/AvatarNavigator";
 
 const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
 
 export default function App() {
   const navigationOptions = {
