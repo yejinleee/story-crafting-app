@@ -7,6 +7,8 @@ import MainNavigator from './MainNavigator';
 import CreateYouravatar from '../pages/createAvatar/CreateYouravatar';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Backpack from '../pages/createAvatar/Backpack';
+import Backpack2 from '../pages/createAvatar/Backpack2';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +20,8 @@ export const AvatarNavigator = () => {
         <Stack.Screen name="CreateQ2" component={CreateQ2} />
         <Stack.Screen name="CreateQ3" component={CreateQ3} />
         <Stack.Screen name="CreateYouravatar" component={CreateYouravatar} />
+        <Stack.Screen name="Backpack" component={Backpack} />
+        <Stack.Screen name="Backpack2" component={Backpack2} />
         <Stack.Screen name="MainNavigator" component={MainNavigator} />
       </Stack.Navigator>
     );

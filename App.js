@@ -8,6 +8,7 @@ import Onboarding from './src/components/pages/Onboarding';
 import { AuthNavigator } from "./src/components/nav/AuthNavigator";
 import MainNavigator from "./src/components/nav/MainNavigator";
 import { AvatarNavigator } from "./src/components/nav/AvatarNavigator";
+import {RecoilRoot, atom, selector, useRecoilState, useRecoilValue} from 'recoil';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,7 @@ export default function App() {
   }, []);
 
   return (
+    <RecoilRoot>
     <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown: false, gestureEnabled: false}}>
           {loading ? (
@@ -48,6 +50,7 @@ export default function App() {
           }
         </Stack.Navigator>      
     </NavigationContainer>
+    </RecoilRoot>
   );
 }
 

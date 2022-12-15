@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Button, Text, View, TextInput, KeyboardAvoidingView, Platform } from "react-native";
+import { StyleSheet, Button, Text, View, TextInput, KeyboardAvoidingView, Platform, TouchableOpacity } from "react-native";
 import MainButton from "../../elements/button/NextStepButton";
 import Divider from "../../elements/layout/Divider";
 import Page from "../Page";
@@ -19,12 +19,11 @@ export default function CreateAvatar() {
             <View style={[styleSystem.center]}>
             <View style={[styles.circle1, styleSystem.center]}></View>
             <View style={[styles.circle2, styleSystem.center]}></View>
-            <View style={[styles.circle3, styleSystem.center]}>
+            <TouchableOpacity style={[styles.circle3, styleSystem.center]} onPress={onpressNextstep}>
               <Icon name="arrow-forward-ios" size={21} color="#FFFFFF" />
-            </View>
+            </TouchableOpacity>
             </View>
           </View> 
-          <MainButton title="next step" onPress={onpressNextstep}></MainButton>
         </Page>
     );
 }
@@ -34,25 +33,26 @@ const styles = StyleSheet.create({
     paddingBottom: 47,
   },
   circle1:{
-    width: 215,
-    height: 215,
+    width: 205,
+    height: 205,
     borderRadius: '50%',
     backgroundColor: 'none',
     borderWidth: 3,
-    borderColor: '#FF8E8E',
+    borderColor: '#C9F0CD',
   },
   circle2:{
     position: 'absolute',
-    width: 141,
-    height: 141,
+    width: 125,
+    height: 125,
     borderRadius: '50%',
-    backgroundColor: '#FFF7A1',
+    borderWidth: 2,
+    borderColor: '#C9F0CD',
   },
   circle3:{
     position: 'absolute',
-    width: 68,
-    height: 68,
+    width: 90,
+    height: 90,
     borderRadius: '50%',
-    backgroundColor: '#AACBFC',
+    backgroundColor: '#C9F0CD',
   },
 });

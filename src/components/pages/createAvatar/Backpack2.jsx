@@ -1,25 +1,25 @@
 import React, { useState } from "react";
-import { StyleSheet, Button, Text, View, TextInput, KeyboardAvoidingView, Platform, Image } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import MainButton from "../../elements/button/NextStepButton";
-import Divider from "../../elements/layout/Divider";
 import Page from "../Page";
 import {useNavigation} from '@react-navigation/native';
 import { Header } from "../../elements/layout/Header";
 import { AvatarQBtn } from "./avatarComponents";
 
-export default function CreateYouravatar() {
+export default function Backpack2() {
     const navigation = useNavigation();
     const onpressNextstep = () => {
-        console.log('먀');
+        navigation.navigate('MainNavigator');
     }
+
     return(
         <Page>
-            <Header left={'Your avatar'} right={'4'} />
+            <Header left={'Collect your backpack'} right={0} />
             <View style={styles.contents}>
                 <View style={styles.textWrap}>
-                    <Text>Congratulations, this is your avatar</Text>
+                    <Text>What are you interesed in?</Text>
+                    <Text>Mulitple selection possible</Text>
                 </View>
-                <Image source={require('../../../assets/sprinkleAvatar.png')} style={{width: 343, height: 450 }} />
             </View>
             <MainButton title="next step" onPress={onpressNextstep}></MainButton>
 
@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
     contents: {
       flex: 1,
       justifyContent: 'center',
-      alignItems: 'center',
     },
     textWrap: {
       alignItems: 'center',

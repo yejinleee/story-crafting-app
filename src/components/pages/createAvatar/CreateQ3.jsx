@@ -1,22 +1,35 @@
 import React, { useState } from "react";
-import { StyleSheet, Button, Text, View, TextInput, KeyboardAvoidingView, Platform } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import MainButton from "../../elements/button/NextStepButton";
 import Divider from "../../elements/layout/Divider";
 import Page from "../Page";
 import {useNavigation} from '@react-navigation/native';
+import { Header } from "../../elements/layout/Header";
+import { AvatarQBtn } from "./avatarComponents";
 
 export default function CreateQ3() {
     const navigation = useNavigation();
     const onpressNextstep = () => {
-        navigation.navigate('CreateYouravatar');
+        navigation.navigate('Backpack');
     }
+    const [q3_1, setQ3_1] = useState(false);
+    const [q3_2, setQ3_2] = useState(false);
+
     return(
         <Page>
-            <Text>Beginning of the journey</Text>
-            <Divider/>
-            <View style={{flex:1}}>
-                <Text>You enjoy working</Text>
-
+            <Header left={'Beginning of the journey'} right={'3'} />
+            <View style={styles.contents}>
+                <View style={styles.textWrap}>
+                    <Text>You enjoy working</Text>
+                </View>
+                <View style={styles.btnWrap}>
+                    <View style={styles.btn}>
+                        <AvatarQBtn text={'Alone'} isSelected={q3_1}/>
+                    </View>
+                    <View style={styles.btn}>
+                        <AvatarQBtn text={'In a team'} isSelected={q3_2}/>
+                    </View>
+                </View>
             </View>
             <MainButton title="next step" onPress={onpressNextstep}></MainButton>
 
@@ -25,10 +38,19 @@ export default function CreateQ3() {
 }
 
 const styles = StyleSheet.create({
-  item: {
-    flex: 1,
-    maxWidth: "50%", // 100% devided by the number of rows you want
-    alignItems: "center",
-    padding: 4
-  },
-});
+    contents: {
+      flex: 1,
+      justifyContent: 'center',
+    },
+    textWrap: {
+      alignItems: 'center',
+      paddingBottom: 37,
+    },
+    btnWrap: {
+      justifyContent: "space-evenly",
+      flexDirection: 'row',
+    },
+    btn: {
+      alignItems: 'center',
+    }
+  });
