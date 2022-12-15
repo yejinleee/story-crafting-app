@@ -1,23 +1,23 @@
 import React from 'react';
-import Login from '../pages/Login';
-import Signup from '../pages/Signup';
-import Create1character from '../pages/createAvatar/create1character';
-import Create2backpack from '../pages/createAvatar/create2backpack';
-import Create3interest from '../pages/createAvatar/create3interest';
-import Create4goals from '../pages/createAvatar/create4goals';
+import CreateAvatar from '../pages/createAvatar/CreateAvatar';
+import CreateQ1 from '../pages/createAvatar/CreateQ1';
+import CreateQ2 from '../pages/createAvatar/CreateQ2';
+import CreateQ3 from '../pages/createAvatar/CreateQ3';
 import MainNavigator from './MainNavigator';
+import CreateYouravatar from '../pages/createAvatar/CreateYouravatar';
+
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 const Stack = createNativeStackNavigator();
 
 export const AvatarNavigator = () => {
     return (
-      <Stack.Navigator initialRouteName="Create1character" screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Signup" component={Signup} />
-        <Stack.Screen name="Create1character" component={Create1character} />
-        <Stack.Screen name="Create2backpack" component={Create2backpack} />
-        <Stack.Screen name="Create3interest" component={Create3interest} />
-        <Stack.Screen name="Create4goals" component={Create4goals} />
+      <Stack.Navigator initialRouteName="CreateAvatar" screenOptions={{headerShown: false}}>
+        <Stack.Screen name="CreateAvatar" component={CreateAvatar} />
+        <Stack.Screen name="CreateQ1" component={CreateQ1} />
+        <Stack.Screen name="CreateQ2" component={CreateQ2} />
+        <Stack.Screen name="CreateQ3" component={CreateQ3} />
+        <Stack.Screen name="CreateYouravatar" component={CreateYouravatar} />
         <Stack.Screen name="MainNavigator" component={MainNavigator} />
       </Stack.Navigator>
     );

@@ -5,17 +5,17 @@ import Divider from "../../elements/layout/Divider";
 import Page from "../Page";
 import {useNavigation} from '@react-navigation/native';
 
-export default function Create2backpack() {
+export default function CreateYouravatar() {
     const navigation = useNavigation();
     const onpressNextstep = () => {
-        navigation.navigate('Create3interest');
+        console.log('먀');
     }
     return(
-        <Page title="Signup">
-            <Text>Let's begin the journey</Text>
+        <Page>
+            <Text>Your avatar</Text>
             <Divider/>
             <View style={{flex:1}}>
-                <Text>Let’s collect some things in the backpack of your character.</Text>
+                <Text>Congratulations. This is your avatar</Text>
 
             </View>
             <MainButton title="next step" onPress={onpressNextstep}></MainButton>

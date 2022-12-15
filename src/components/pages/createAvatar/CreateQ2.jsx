@@ -5,17 +5,17 @@ import Divider from "../../elements/layout/Divider";
 import Page from "../Page";
 import {useNavigation} from '@react-navigation/native';
 
-export default function Create3interest() {
+export default function CreateQ2() {
     const navigation = useNavigation();
     const onpressNextstep = () => {
-        navigation.navigate('Create4goals');
+        navigation.navigate('CreateQ3');
     }
     return(
-        <Page title="Signup">
-            <Text>Let's begin the journey</Text>
+        <Page>
+            <Text>Beginning of the journey</Text>
             <Divider/>
             <View style={{flex:1}}>
-                <Text>What are you interested in?</Text>
+                <Text>Your perfect night look like</Text>
 
             </View>
             <MainButton title="next step" onPress={onpressNextstep}></MainButton>

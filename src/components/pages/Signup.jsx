@@ -11,7 +11,6 @@ export default function Signup({ navigation }) {
 
     const onpressNextstep = () => {
       navigation.reset({routes: [{name: 'AvatarNavigator'}]})
-        console.log('pressed next step in Signup');
     }
     const goBack = () => {
       navigation.goBack();
