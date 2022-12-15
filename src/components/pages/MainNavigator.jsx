@@ -8,56 +8,43 @@ import Posting from "./Posting";
 
 const Tab = createBottomTabNavigator();
 
-const MainNavigator = ({navigation}) => {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen
-        options={{
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="add-circle-outline" color={color} size={26} />
-          ),
-          headerRight: () => (
-            <TouchableOpacity onPress={() => navigation.navigate("CreatePost")}>
-              <Ionicons name="add-circle-outline" size={26} />
-            </TouchableOpacity>
-          )
-        }}
-        name="Home"
-        component={Posting}
-      />
-      <Tab.Screen
-        options={{
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="flag-outline" color={color} size={26} />
-          )
-        }}
-        name="Workshops"
-        component={Workshops}
-      />
-      <Tab.Screen
-        options={{
-          tabBarIcon: ({ color }) => (
-            <Ionicons
-              name="chatbubble-ellipses-outline"
-              color={color}
-              size={26}
-            />
-          )
-        }}
-        name="Chat"
-        component={Home}
-      />
-      <Tab.Screen
-        options={{
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="person-outline" color={color} size={26} />
-          )
-        }}
-        name="Profile"
-        component={Account}
-      />
-    </Tab.Navigator>
-  );
-};
+const MainNavigator = () => {
+    return(
+        <Tab.Navigator>
+        <Tab.Screen
+          options={{
+            tabBarIcon: ({ color }) =>
+              <Ionicons name="add-circle-outline" color={color} size={26} />
+          }}
+          name="Home"
+          component={Home}
+        />
+        <Tab.Screen
+          options={{
+            tabBarIcon: ({ color }) =>
+              <Ionicons name="flag-outline" color={color} size={26} />
+          }}
+          name="Workshop"
+          component={Workshops}
+        />
+        <Tab.Screen
+          options={{
+            tabBarIcon: ({ color }) =>
+              <Ionicons name="chatbubble-ellipses-outline" color={color} size={26} />
+          }}
+          name="Chat"
+          component={Account}
+        />
+        <Tab.Screen
+          options={{
+            tabBarIcon: ({ color }) =>
+              <Ionicons name="person-outline" color={color} size={26} />
+          }}
+          name="Profile"
+          component={Account}
+        />
+      </Tab.Navigator>
+    )
+}
 
 export default MainNavigator;
