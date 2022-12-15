@@ -7,6 +7,7 @@ import Create3interest from '../pages/createAvatar/create3interest';
 import Create4goals from '../pages/createAvatar/create4goals';
 import MainNavigator from './MainNavigator';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { AvatarNavigator } from './AvatarNavigator';
 const Stack = createNativeStackNavigator();
 
 export const AuthNavigator = () => {
@@ -19,6 +20,7 @@ export const AuthNavigator = () => {
         <Stack.Screen name="Create3interest" component={Create3interest} />
         <Stack.Screen name="Create4goals" component={Create4goals} />
         <Stack.Screen name="MainNavigator" component={MainNavigator} />
+        <Stack.Screen name="AvatarNavigator" component={AvatarNavigator} />
       </Stack.Navigator>
     );
   };

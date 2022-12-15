@@ -37,11 +37,15 @@ export default function App() {
             <Stack.Screen name="Onboarding" component={Onboarding} />
           ) : isLogin ? (
             <Stack.Screen name="MainNavigator" component={MainNavigator} />
-          ) : madeAvatar ? (
-            <Stack.Screen name="AuthNavigator" component={AuthNavigator} />
           ) : (
-            <Stack.Screen name="AvatarNavigator" component={AvatarNavigator} />
-          )}
+            <Stack.Screen name="AuthNavigator" component={AuthNavigator} /> 
+          )
+          // ) : madeAvatar ? (
+          //   <Stack.Screen name="AuthNavigator" component={AuthNavigator} />
+          // ) : (
+          //   <Stack.Screen name="AvatarNavigator" component={AvatarNavigator} />
+          // )}
+          }
         </Stack.Navigator>      
     </NavigationContainer>
   );

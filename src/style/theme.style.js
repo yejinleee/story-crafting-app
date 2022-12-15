@@ -9,27 +9,33 @@ export const palette = {
 };
 
 export const theme = {
-  colors,
-  spacing,
-  radius,
-  style: {
-    card: {
-      backgroundColor: colors.card,
-      padding: spacing.l,
-      borderRadius: radius.m
-    }
+  colors: {
+    background: palette.white,
+    foreground: palette.black,
+    primary: palette.black,
+    primaryForeground: "#FFFFFF",
+    secondary: palette.grey,
+    success: palette.green,
+    failure: palette.red
+  },
+  spacing: {
+    xs: 2,
+    s: 4,
+    m: 8,
+    l: 16,
+    xl: 24
+  },
+  radius: {
+    s: 4,
+    m: 16,
+    l: 24,
+    xl: 40
   },
   textVariants: {
     header: {
       fontFamily: "Raleway",
       fontSize: 36,
       fontWeight: "bold"
-    },
-    title: {
-      fontSize: 24,
-      fontWeight: "bold",
-      marginBottom: spacing.m,
-      marginTop: spacing.l,
     },
     body: {
       fontFamily: "Merriweather",

@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 
 export const AvatarNavigator = () => {
     return (
-      <Stack.Navigator initialRouteName="Login" screenOptions={{headerShown: false}}>
+      <Stack.Navigator initialRouteName="Create1character" screenOptions={{headerShown: false}}>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Create1character" component={Create1character} />

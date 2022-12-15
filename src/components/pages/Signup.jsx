@@ -10,7 +10,7 @@ export default function Signup({ navigation }) {
     const [username, setUsername] = useState('');
 
     const onpressNextstep = () => {
-      navigation.navigate('MainNavigator');
+      navigation.reset({routes: [{name: 'AvatarNavigator'}]})
         console.log('pressed next step in Signup');
     }
     const goBack = () => {
