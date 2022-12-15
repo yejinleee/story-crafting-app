@@ -1,13 +1,14 @@
 import React from "react";
 import { useState } from "react";
 import { KeyboardAvoidingView, SafeAreaView, StatusBar, StyleSheet, Text, TextInput, View, Platform, TouchableOpacity } from "react-native";
-import { theme } from "../../style/theme.style";
+import { theme, palette } from "../../style/theme.style";
 import {useNavigation} from '@react-navigation/native';
 
 const Login =() => {
     const [email, setEmail] = useState('');
     const [pw, setPw] = useState('');
-    const onpressClick = () => {
+    const onpressLogin = () => {
+        navigation.navigate('MainNavigator');
         console.log('login');
     }
     const navigation = useNavigation();
@@ -15,17 +16,23 @@ const Login =() => {
         navigation.navigate('Signup');
     }
     return (
-        <SafeAreaView style={styles.flex}>
-            <StatusBar barStyle={'dark-content'} backgroundColor="white" />
+        <SafeAreaView style={[styles.flex]}>
+            <StatusBar barStyle={'dark-content'} backgroundColor="#D9D9D9" /> 
+            {/* for AOS */}
             <View style={styles.container}>
                 <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} >
-                    <TextInput style={styles.input} onChangeText={setEmail} value={email} placeholder={'Email'}/>
-                    <TextInput style={styles.input} onChangeText={setPw} value={pw} placeholder={'Password'} />
-                    <TouchableOpacity onPress={onpressClick}>
-                    <Text>Login</Text>
+                    <View style={{alignItems: 'center'}}>
+                        <TextInput style={[styles.input, {marginTop: 107}]} onChangeText={setEmail} value={email} placeholder={'Email'}/>
+                        <TextInput style={[styles.input, {marginTop: 30}]} onChangeText={setPw} value={pw} placeholder={'Password'} />
+                    </View>
+                    <TouchableOpacity style={styles.forgot}>
+                        <Text>Forgot your password?</Text>                        
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={onpressSignup}>
-                        <Text>sign up</Text>
+                    <TouchableOpacity onPress={onpressLogin} style={styles.loginBtn}>
+                        <Text>Login</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={onpressSignup} style={styles.signupBtn}>
+                        <Text style={{textDecorationLine: 'underline'}}>sign up</Text>
                     </TouchableOpacity>
                 </KeyboardAvoidingView>
             </View>
@@ -35,21 +42,36 @@ const Login =() => {
 export default Login;
 
 const styles = StyleSheet.create({
-    flex: {flex: 1, alignItems: 'center', justifyContent: 'center'},
+    flex: {flex: 1, backgroundColor: '#FFFFFF'},
     container: {
-        height: "100%",
-        width: "100%",
         padding: theme.spacing.m,
         backgroundColor: theme.colors.background,
         flex: 2,
         alignItems: 'center',
-        justifyContent: 'center',
     },
     input: {
-        width: '100%',
-        height: 40,
-        margin: 12,
+        width: 277,
+        height: 64,
         borderWidth: 1,
-        padding: 10,
+        borderRadius: 20,
+        paddingLeft: 20,
       },
+      forgot: {
+        alignItems: 'flex-end',
+        marginTop: 8,
+      },
+      loginBtn: {
+        backgroundColor: palette.blue,
+        width: 300,
+        height: 50,
+        borderRadius: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 33,
+      },
+      signupBtn:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 8,
+    },
 });

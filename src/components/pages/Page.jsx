@@ -4,7 +4,7 @@ import { theme } from "../../style/theme.style";
 
 export default function Page({ title, children }) {
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={{flex:1, backgroundColor: '#FFFFFF'}}>
       <View style={styles.container}>
         {children}
       </View>
@@ -17,9 +17,8 @@ const styles = StyleSheet.create({
     minHeight: "100%",
     height: "100%",
     width: "100%",
-    padding: theme.spacing.m,
+    // padding: theme.spacing.m,
     backgroundColor: theme.colors.background,
-    display: "flex",
-    flex: 1
+    flex: 2,
   }
 });

@@ -1,34 +1,33 @@
 import React, { useState } from "react";
-import { StyleSheet, Button, Text, View, TextInput, KeyboardAvoidingView, Platform } from "react-native";
-import MainButton from "../elements/button/MainButton";
-import Divider from "../elements/layout/Divider";
+import { StyleSheet, Button,TouchableOpacity, Text, View, TextInput, KeyboardAvoidingView, Platform } from "react-native";
+import MainButton from "../elements/button/NextStepButton";
 import Page from "./Page";
+import { GobackHeader } from "../elements/layout/GobackHeader";
 
 export default function Signup({ navigation }) {
-    const [name, setName] = useState('');
-    const [lastname, setLastname] = useState('');
-    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [pw, setPw] = useState('');
-    const [checkpw, setCheckpw] = useState(''); 
+    const [username, setUsername] = useState('');
 
     const onpressNextstep = () => {
-        navigation.navigate('Create1character');
-        console.log('pressed next step in Signup');
+      navigation.reset({routes: [{name: 'AvatarNavigator'}]})
+    }
+    const goBack = () => {
+      navigation.goBack();
     }
     return(
         <Page title="Signup">
-            <Text>Let's begin the journey</Text>
-            <Divider/>
-            <View style={{flex:1}}>
-                <Text>create an account</Text>
+            <GobackHeader goBack={goBack} title="" />
+            {/* <TouchableOpacity onPress={goBack}> */}
+              {/* <Text>asdfsafads</Text> */}
+            {/* </TouchableOpacity> */}
+            <View style={[styles.container, {flex:1}]}>
                 <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} >
-                    <TextInput style={styles.input} onChangeText={setName} value={name} placeholder={'Name'}/>
-                    <TextInput style={styles.input} onChangeText={setLastname} value={lastname} placeholder={'Last Name'}/>
-                    <TextInput style={styles.input} onChangeText={setUsername} value={username} placeholder={'Username'}/>
-                    <TextInput style={styles.input} onChangeText={setEmail} value={email} placeholder={'Email'}/>
-                    <TextInput style={styles.input} onChangeText={setPw} value={pw} placeholder={'Password'} />
-                    <TextInput style={styles.input} onChangeText={setCheckpw} value={checkpw} placeholder={'Repeat password'} />
+                    <Text style={[styles.signupText, {marginTop: 70}]}>Type your university account</Text>
+                    <TextInput style={[styles.input, {marginTop: 9}]} onChangeText={setEmail} value={email} placeholder={'Email'}/>
+                    <TextInput style={[styles.input, {marginTop: 14}]} onChangeText={setPw} value={pw} placeholder={'Password'} />
+                    <Text style={[styles.signupText, {marginTop: 37}]}>Type your username</Text>
+                    <TextInput style={[styles.input, {marginTop: 9}]} onChangeText={setUsername} value={username} placeholder={'Username'}/>
                 </KeyboardAvoidingView>
             </View>
             <MainButton title="next step" onPress={onpressNextstep}></MainButton>
@@ -38,20 +37,18 @@ export default function Signup({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  workshopGrid: {
-    width: "100%"
+  container: {
+    alignItems: 'center',
   },
-  item: {
-    flex: 1,
-    maxWidth: "50%", // 100% devided by the number of rows you want
-    alignItems: "center",
-    padding: 4
+  signupText: {
+    alignItems: 'flex-end',
+    marginTop: 8,
   },
   input: {
-    width: '80%',
-    height: 40,
-    margin: 12,
+    width: 277,
+    height: 64,
     borderWidth: 1,
-    padding: 10,
+    borderRadius: 20,
+    paddingLeft: 20,
   },
 });

@@ -1,10 +1,11 @@
-const palette = {
-  purple: "#5A31F4",
-  green: "#0ECD9D",
-  red: "#CD0E61",
-  black: "#3a3f47",
-  grey: "#9e9e9e",
-  white: "#ffffff"
+export const palette = {
+  red: "#FF8E8E",
+  green: "#C9F0CD",
+  yellow: "#FFF7A1",
+  blue: "#AACBFC",
+  grey: "#A9A9A9",
+  black: "#000000",
+  white: "#FFFFFF"
 };
 
 const spacing = {

@@ -7,7 +7,7 @@ export default function Divider(props) {
       {...props}
       style={{
         borderBottomColor: theme.colors.secondary,
-        borderBottomWidth: "1px",
+        borderBottomWidth: 1,
         marginVertical: theme.spacing.l
       }}
     ></View>

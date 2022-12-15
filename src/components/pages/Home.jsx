@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Button } from "react-native";
-import MainButton from "../elements/button/MainButton";
+import MainButton from "../elements/button/NextStepButton";
 import Page from "./Page";
 
 export default function Home({ navigation }) {

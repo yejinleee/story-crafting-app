@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Image, StyleSheet, Text, View, Button } from "react-native";
 import { theme } from "../../style/theme.style";
-import MainButton from "../elements/button/MainButton";
+import MainButton from "../elements/button/NextStepButton";
 import Divider from "../elements/layout/Divider";
 import Page from "./Page";
 import Ionicons from "@expo/vector-icons/Ionicons";
