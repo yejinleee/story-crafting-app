@@ -4,7 +4,9 @@ import { TouchableOpacity, Text, StyleSheet, Platform } from 'react-native';
 export const AvatarQBtn = ({iconSrc, serialN, text, isSelected, handleOnpress}) => {
     return (
         <>
-            <TouchableOpacity style={ isSelected ? [styles.circleBtn, styles.circleBtnSelected] : [styles.circleBtn, styles.circleBtnUnelected]}>
+            <TouchableOpacity onPress={handleOnpress}
+                style={ isSelected ? [styles.circleBtn, styles.circleBtnSelected] : [styles.circleBtn, styles.circleBtnUnelected]}
+            >
                 <Text>이미지 iconSrc</Text>
             </TouchableOpacity>
             <Text style={styles.text}>

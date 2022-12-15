@@ -7,7 +7,8 @@ import {useNavigation} from '@react-navigation/native';
 const Login =() => {
     const [email, setEmail] = useState('');
     const [pw, setPw] = useState('');
-    const onpressClick = () => {
+    const onpressLogin = () => {
+        navigation.navigate('MainNavigator');
         console.log('login');
     }
     const navigation = useNavigation();
@@ -27,7 +28,7 @@ const Login =() => {
                     <TouchableOpacity style={styles.forgot}>
                         <Text>Forgot your password?</Text>                        
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={onpressClick} style={styles.loginBtn}>
+                    <TouchableOpacity onPress={onpressLogin} style={styles.loginBtn}>
                         <Text>Login</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={onpressSignup} style={styles.signupBtn}>
