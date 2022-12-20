@@ -2,14 +2,15 @@ import { StyleSheet, Text, View } from "react-native";
 import { theme } from "../../../style/theme.style";
 import Card from "./Card";
 
-export default function Title({ text, children }) {
+export default function Title({ text, style, children }) {
   return (
     <View
       style={[
         styles.title,
         children
           ? { justifyContent: "space-between" }
-          : { justifyContent: "center" }
+          : { justifyContent: "center" },
+        style
       ]}
     >
       <Text style={styles.text}>{text}</Text>
@@ -38,6 +39,6 @@ const styles = StyleSheet.create({
     fontStyle: "bold",
     fontWeight: 500,
     paddingHorizontal: theme.spacing.m,
-    paddingVertical: theme.spacing.s,
+    paddingVertical: theme.spacing.xs
   }
 });
