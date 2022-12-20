@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, Platform } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, Platform, Image } from 'react-native';
 
 export const AvatarQBtn = ({iconSrc, serialN, text, isSelected, handleOnpress}) => {
     return (
@@ -7,7 +7,12 @@ export const AvatarQBtn = ({iconSrc, serialN, text, isSelected, handleOnpress}) 
             <TouchableOpacity onPress={handleOnpress}
                 style={ isSelected ? [styles.circleBtn, styles.circleBtnSelected] : [styles.circleBtn, styles.circleBtnUnelected]}
             >
-                <Text>이미지 iconSrc</Text>
+                <Image
+                  source={require(`../../../assets/onboarding/${iconSrc}.png`)}
+                  style={iconSrc.includes('q2_1') ? {width: 85, height: 46}
+                  : iconSrc.includes('q2_2') ?{width: 76, height: 38}
+                  : iconSrc.includes('q3_1') ? {width: 74, height: 62} :{ width: 45, height: 45 }}
+                />
             </TouchableOpacity>
             <Text style={styles.text}>
                 {text}

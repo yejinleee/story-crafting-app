@@ -10,7 +10,7 @@ import { AvatarQBtn } from "./avatarComponents";
 export default function CreateQ3() {
     const navigation = useNavigation();
     const onpressNextstep = () => {
-        navigation.navigate('Backpack');
+        navigation.navigate('CreateYouravatar');
     }
     const [q3_1, setQ3_1] = useState(false);
     const [q3_2, setQ3_2] = useState(false);
@@ -24,10 +24,10 @@ export default function CreateQ3() {
                 </View>
                 <View style={styles.btnWrap}>
                     <View style={styles.btn}>
-                        <AvatarQBtn text={'Alone'} isSelected={q3_1}/>
+                        <AvatarQBtn text={'Alone'} isSelected={q3_1} iconSrc={'q3_1'}/>
                     </View>
                     <View style={styles.btn}>
-                        <AvatarQBtn text={'In a team'} isSelected={q3_2}/>
+                        <AvatarQBtn text={'In a team'} isSelected={q3_2} iconSrc={'q3_2'}/>
                     </View>
                 </View>
             </View>

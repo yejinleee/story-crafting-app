@@ -26,10 +26,10 @@ export default function CreateQ1() {
                 </View>
                 <View style={styles.btnWrap}>
                     <View style={styles.btn}>
-                        <AvatarQBtn text={'Well-planned'} isSelected={q1_1}/>
+                        <AvatarQBtn text={'Well-planned'} isSelected={q1_1} iconSrc={'q1_1'}/>
                     </View>
                     <View style={styles.btn}>
-                        <AvatarQBtn text={'Last minute'} isSelected={q1_2} />
+                        <AvatarQBtn text={'Last minute'} isSelected={q1_2} iconSrc={'q1_2'}/>
                     </View>
                 </View>
             </View>
