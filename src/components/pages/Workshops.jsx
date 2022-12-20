@@ -7,6 +7,7 @@ import MainButton from "../elements/button/NextStepButton";
 import Title from "../elements/layout/Title";
 import Avatar from "../elements/avatar/Avatar";
 import RoundButton from "../elements/button/RoundButton";
+import ScrollPage from "./ScrollPage";
 
 function Item({ item }) {
   return (
@@ -24,7 +25,7 @@ export default function Workshops() {
   }
 
   return (
-    <Page title="Workshops">
+    <ScrollPage title="Workshops">
       <Title text="Information about StoryCrafting"><RoundButton title="i"/></Title>
       <FlatList
         style={styles.workshopGrid}
@@ -33,7 +34,7 @@ export default function Workshops() {
         renderItem={Item}
       />
       <MainButton title="Add" onPress={onAddButton}/>
-    </Page>
+    </ScrollPage>
   );
 }
 

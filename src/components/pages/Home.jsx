@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { StyleSheet, Button } from "react-native";
 import MainButton from "../elements/button/NextStepButton";
 import Page from "./Page";
+import ScrollPage from "./ScrollPage";
 
 export default function Home({ navigation }) {
   return (
-    <Page title="Home">
+    <ScrollPage title="Home">
         <MainButton title="Workshops" onPress={() => navigation.navigate('Workshops')}/>
         <MainButton title="Account" onPress={() => navigation.navigate('Profile')}/>
-    </Page>
+    </ScrollPage>
   );
 }
 
