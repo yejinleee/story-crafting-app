@@ -19,5 +19,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: theme.spacing.m,
     backgroundColor: theme.colors.background,
     flex: 2,
+    display: "inline-flex",
+    flexDirection: "column",
+    gap: theme.spacing.m
   }
 });

@@ -10,11 +10,17 @@ export const palette = {
 
 const spacing = {
   xs: 2,
-  s: 4,
-  m: 8,
+  s: 8,
+  m: 12,
   l: 16,
   xl: 24
 };
+
+const fontSize = {
+  s: 12,
+  m: 16,
+  l: 24
+}
 
 const colors = {
   background: palette.white,
@@ -38,7 +44,7 @@ const colors = {
 };
 
 const radius = {
-  s: 12,
+  s: 10,
   m: 16,
   l: 24,
   xl: 40
@@ -48,21 +54,15 @@ export const theme = {
   colors,
   spacing,
   radius,
+  fontSize,
   style: {
     card: {
       backgroundColor: colors.background,
-      padding: spacing.l,
-      marginRight: 2,
+      paddingHorizontal: spacing.m,
+      paddingVertical: spacing.s,
       borderRadius: radius.m,
       borderWidth: 1,
       borderColor: colors.border.light,
-      // shadowColor: "#000",
-      // shadowOffset: {
-      //   width: 1,
-      //   height: 2
-      // },
-      // shadowOpacity: 0.15,
-      // shadowRadius: 3
     }
   },
   textVariants: {
