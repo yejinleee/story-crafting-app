@@ -5,10 +5,11 @@ import Divider from "../../elements/layout/Divider";
 import GridList from "../../elements/layout/GridList";
 import Title from "../../elements/layout/Title";
 import Page from "../Page";
+import ScrollPage from "../ScrollPage";
 
 export default function Avatar() {
   return (
-    <Page>
+    <ScrollPage>
       <Card shadow={true}>
         <Title
           text="Avatar"
@@ -58,7 +59,7 @@ export default function Avatar() {
       <GridList title="Clothes">{[...Array(15)].map((_, i) => i)}</GridList>
       <GridList title="Head">{[...Array(5)].map((_, i) => i)}</GridList>
       </Card>
-    </Page>
+    </ScrollPage>
   );
 }
 

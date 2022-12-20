@@ -14,6 +14,7 @@ import Avatar from "./account/Avatar";
 import Rewards from "./account/Rewards";
 import Card from "../elements/layout/Card";
 import Title from "../elements/layout/Title";
+import ScrollPage from "./ScrollPage";
 
 const Stack = createNativeStackNavigator();
 
@@ -50,7 +51,7 @@ export default function Account({ navigation }) {
   };
 
   const Profile = () => (
-    <Page>
+    <ScrollPage>
       <Card shadow={true} style={styles.avatarSpace}>
         <View style={styles.avatarSelector}>
           <Selector
@@ -73,7 +74,7 @@ export default function Account({ navigation }) {
         </View>
       </Card>
       <Calendar />
-    </Page>
+    </ScrollPage>
   );
 
   return (

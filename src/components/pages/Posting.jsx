@@ -4,6 +4,7 @@ import { theme } from "../../style/theme.style";
 import Card from "../elements/layout/Card";
 import Post from "../elements/posting/Post";
 import Page from "./Page";
+import ScrollPage from "./ScrollPage";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +22,7 @@ export default function Posting() {
       <Stack.Screen
         name="Posting"
         component={() => (
-          <Page>
+          <ScrollPage>
             <Card round={true}>
               <Text
                 style={{fontSize: theme.fontSize.s}}
@@ -34,7 +35,7 @@ export default function Posting() {
               .map((_, index) => (
                 <Post key={index} />
               ))}
-          </Page>
+          </ScrollPage>
         )}
       />
       <Stack.Screen
