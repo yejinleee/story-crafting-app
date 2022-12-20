@@ -6,26 +6,35 @@ import { TouchableOpacity } from "react-native-web";
 export default function Post() {
   return (
     <View style={[theme.style.card, styles.container]}>
-      <View style={{display: "flex", flexDirection: "column", gap: theme.spacing.s}}>
-      <View style={styles.info}>author</View>
-        <View style={[styles.content, theme.style.card]}></View>
-        <Text style={{display: "block"}}>
-          <Ionicons
-            name="heart-circle-outline"
-            color={theme.colors.primary}
-          />
-          {" 3 likes"}
-        </Text>
+      <View
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: theme.spacing.m
+        }}
+      >
+        <View style={styles.info}>
+          <View style={styles.avatar}></View> author
+        </View>
+        <View style={[styles.content]}></View>
+        <View style={styles.textContent}>
+          <Text style={{ display: "block" }}>
+            <Ionicons
+              name="heart-circle-outline"
+              color={theme.colors.accent.red}
+              size={16}
+            />
+            {" 3 likes"}
+          </Text>
+          <Text style={{ display: "block" }}>Description of the post</Text>
+        </View>
       </View>
       <View style={[theme.style.card, styles.comments]}>
         <View style={styles.commentText}>
-            <Text style={{flex: 1}}>write a comment</Text>
+          <Text style={{ flex: 1 }}>write a comment</Text>
         </View>
         <TouchableOpacity style={styles.commentButton}>
-        <Ionicons
-            name="send-outline"
-            color={theme.colors.primary}
-          />
+          <Ionicons name="send-outline" color={theme.colors.accent.blue} />
         </TouchableOpacity>
       </View>
     </View>
@@ -34,16 +43,33 @@ export default function Post() {
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
+    width: "auto",
     display: "flex",
     flexDirection: "column",
-    margin: theme.spacing.s,
+    marginVertical: theme.spacing.s,
+    paddingVertical: theme
+  },
+  info: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
     gap: theme.spacing.m
   },
-  info: {},
+  avatar: {
+    borderRadius: theme.radius.s,
+    backgroundColor: "#f6f6f7",
+    borderColor: theme.colors.border.strong,
+    borderWidth: 2,
+    padding: theme.spacing.l,
+  },
   content: {
     width: "100%",
-    aspectRatio: 1 / 1
+    aspectRatio: 1 / 1,
+    backgroundColor: "#f6f6f7",
+    borderRadius: theme.radius.m
+  },
+  textContent: {
+    paddingHorizontal: theme.spacing.l
   },
   comments: {
     padding: 1,
@@ -53,7 +79,7 @@ const styles = StyleSheet.create({
   },
   commentText: {
     paddingVertical: theme.spacing.s,
-    paddingHorizontal: theme.spacing.m,
+    paddingHorizontal: theme.spacing.m
   },
   commentButton: {
     paddingHorizontal: theme.spacing.m,

@@ -5,13 +5,14 @@ import Workshops from "../pages/Workshops";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 const Tab = createBottomTabNavigator();
 import Ionicons from "@expo/vector-icons/Ionicons";
+import Posting from "../pages/Posting";
 
 const MainNavigator = () => {
     return(
         <Tab.Navigator>
         <Tab.Screen
           name="Home"
-          component={Home}
+          component={Posting}
           options={{
             tabBarIcon: ({focused}) =>{
               if (focused) {

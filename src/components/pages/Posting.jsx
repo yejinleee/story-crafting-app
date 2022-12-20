@@ -23,7 +23,7 @@ export default function Posting() {
         component={() =>
           <Page>
             <Text
-              style={[theme.style.card, { paddingVertical: theme.spacing.s }]}
+              style={[theme.style.card, { paddingVertical: theme.spacing.s, marginBottom: theme.spacing.m}]}
             >
               You uploaded 1 post for a week. Share your stories with others!
             </Text>

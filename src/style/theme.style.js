@@ -1,9 +1,9 @@
 export const palette = {
-  red: "#FF8E8E",
+  red: "#ff8d90",
   green: "#C9F0CD",
   yellow: "#FFF7A1",
   blue: "#AACBFC",
-  grey: "#A9A9A9",
+  grey: "#e8e8e8",
   black: "#000000",
   white: "#FFFFFF"
 };
@@ -24,11 +24,21 @@ const colors = {
   secondary: palette.grey,
   success: palette.green,
   failure: palette.red,
-  card: "rgba(52, 52, 52, 0.1)"
+  card: "rgba(52, 52, 52, 0.1)",
+  border: {
+    light: palette.grey,
+    strong: "#cccccc"
+  },
+  accent: {
+    blue: palette.blue,
+    red: palette.red,
+    green: palette.green,
+    yellow: palette.yellow
+  }
 };
 
 const radius = {
-  s: 4,
+  s: 12,
   m: 16,
   l: 24,
   xl: 40
@@ -40,9 +50,19 @@ export const theme = {
   radius,
   style: {
     card: {
-      backgroundColor: colors.card,
+      backgroundColor: colors.background,
       padding: spacing.l,
-      borderRadius: radius.m
+      marginRight: 2,
+      borderRadius: radius.m,
+      borderWidth: 1,
+      borderColor: colors.border.light,
+      // shadowColor: "#000",
+      // shadowOffset: {
+      //   width: 1,
+      //   height: 2
+      // },
+      // shadowOpacity: 0.15,
+      // shadowRadius: 3
     }
   },
   textVariants: {
@@ -55,7 +75,7 @@ export const theme = {
       fontSize: 24,
       fontWeight: "bold",
       marginBottom: spacing.m,
-      marginTop: spacing.l,
+      marginTop: spacing.l
     },
     body: {
       fontFamily: "Merriweather",

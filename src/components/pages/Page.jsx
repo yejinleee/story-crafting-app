@@ -1,14 +1,14 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import { theme } from "../../style/theme.style";
 
 export default function Page({ title, children }) {
   return (
-    <SafeAreaView style={{flex:1, backgroundColor: '#FFFFFF'}}>
+    <ScrollView style={{flex:1, backgroundColor: '#FFFFFF', paddingVertical: theme.spacing.m}}>
       <View style={styles.container}>
         {children}
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 }
 
@@ -16,8 +16,7 @@ const styles = StyleSheet.create({
   container: {
     minHeight: "100%",
     height: "100%",
-    width: "100%",
-    // padding: theme.spacing.m,
+    paddingHorizontal: theme.spacing.m,
     backgroundColor: theme.colors.background,
     flex: 2,
   }
