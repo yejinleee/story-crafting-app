@@ -4,6 +4,8 @@ import Workshop from "../elements/workshop/Workshop";
 import Page from "./Page";
 import { theme } from "../../style/theme.style";
 import MainButton from "../elements/button/NextStepButton";
+import Title from "../elements/layout/Title";
+import Avatar from "../elements/avatar/Avatar";
 
 function Item({ item }) {
   return (
@@ -22,6 +24,7 @@ export default function Workshops() {
 
   return (
     <Page title="Workshops">
+      <Title text="Information about StoryCrafting"><View>i</View></Title>
       <FlatList
         style={styles.workshopGrid}
         numColumns={2}
