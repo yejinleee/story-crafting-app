@@ -12,6 +12,8 @@ import { TouchableOpacity } from "react-native-web";
 import Backpack from "./account/Backpack";
 import Avatar from "./account/Avatar";
 import Rewards from "./account/Rewards";
+import Card from "../elements/layout/Card";
+import Title from "../elements/layout/Title";
 
 const Stack = createNativeStackNavigator();
 
@@ -22,18 +24,34 @@ export default function Account({ navigation }) {
     setSeed((d) => d + 1);
   }
 
-  const Selector = ({ icon, name, onClick }) => (
-    <TouchableOpacity onPress={onClick} style={{...theme.style.card, ...styles.selector}}>
-      <Text style={styles.title}>{name}</Text>
-      <View style={styles.iconSpace}>
-        <Ionicons name={icon} color={theme.colors.primary} size={48} />
-      </View>
-    </TouchableOpacity>
-  );
+  const Selector = ({ icon, name, onClick }) => {
+    const { red, blue, green } = theme.colors.accent;
+    const titleColors = { Avatar: red, Backpack: green, Rewards: blue };
+    const titleColor = titleColors[name] ?? red;
+
+    return (
+      <TouchableOpacity
+        onPress={onClick}
+        style={{
+          ...theme.style.card,
+          ...styles.selector,
+          borderColor: titleColor,
+          borderWidth: 2,
+          paddingVertical: theme.spacing.xs,
+          paddingHorizontal: theme.spacing.xs
+        }}
+      >
+        <Title text={name} style={{ backgroundColor: titleColor }}></Title>
+        <View style={styles.iconSpace}>
+          <Ionicons name={icon} color={titleColor} size={48} />
+        </View>
+      </TouchableOpacity>
+    );
+  };
 
   const Profile = () => (
     <Page>
-      <View style={styles.avatarSpace}>
+      <Card shadow={true} style={styles.avatarSpace}>
         <View style={styles.avatarSelector}>
           <Selector
             name="Avatar"
@@ -53,7 +71,7 @@ export default function Account({ navigation }) {
             onClick={() => navigation.navigate("Rewards")}
           />
         </View>
-      </View>
+      </Card>
       <Divider />
       <Calendar />
     </Page>
@@ -84,10 +102,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     height: 256,
     gap: theme.spacing.l,
-    padding: theme.spacing.l,
-    alignItems: "center",
-    backgroundColor: theme.colors.card,
-    borderRadius: theme.radius.m
+    alignItems: "center"
   },
   avatarSelector: {
     flex: 1,
