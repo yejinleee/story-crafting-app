@@ -3,6 +3,7 @@ import { theme } from "../../../style/theme.style";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { TouchableOpacity } from "react-native-web";
 import Card from "../layout/Card";
+import Avatar from "../avatar/Avatar";
 
 export default function Post() {
   return (
@@ -15,7 +16,8 @@ export default function Post() {
         }}
       >
         <View style={styles.info}>
-          <View style={styles.avatar}></View> author
+          <Avatar />
+          author
         </View>
         <View style={[styles.content]}></View>
         <View style={styles.textContent}>
@@ -57,13 +59,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: theme.spacing.m,
     paddingHorizontal: theme.spacing.l
-  },
-  avatar: {
-    borderRadius: theme.radius.s,
-    backgroundColor: "#f6f6f7",
-    borderColor: theme.colors.border.strong,
-    borderWidth: 2,
-    padding: theme.spacing.l
   },
   content: {
     width: "100%",
