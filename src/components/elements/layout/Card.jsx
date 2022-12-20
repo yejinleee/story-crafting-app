@@ -8,7 +8,7 @@ Card.defaultProps = {
 
 export default function Card({ style, shadow, children, round, ...props }) {
   return (
-    <View {...props} style={[theme.style.card, shadow ? styles.shadow : {}, round ? {borderRadius: 1000} : {}, style]}>
+    <View {...props} style={[theme.style.card, styles.flex, shadow ? styles.shadow : {}, round ? {borderRadius: 1000} : {}, style]}>
       {children}
     </View>
   );
@@ -24,5 +24,10 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.15,
     shadowRadius: 3
+  },
+  flex: {
+    display: "flex",
+    flexDirection: "column",
+    gap: theme.spacing.s
   }
 });

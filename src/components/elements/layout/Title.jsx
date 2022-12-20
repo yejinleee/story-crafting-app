@@ -13,7 +13,7 @@ export default function Title({ text, style, children }) {
         style
       ]}
     >
-      <Text style={styles.text}>{text}</Text>
+      {text && <Text style={styles.text}>{text}</Text>}
       {children}
     </View>
   );

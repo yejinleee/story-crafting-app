@@ -72,7 +72,6 @@ export default function Account({ navigation }) {
           />
         </View>
       </Card>
-      <Divider />
       <Calendar />
     </Page>
   );
