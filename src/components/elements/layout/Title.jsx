@@ -1,21 +1,20 @@
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { theme } from "../../../style/theme.style";
 import Card from "./Card";
 
 export default function Title({ text, children }) {
   return (
-    <Card
+    <View
       style={[
         styles.title,
         children
           ? { justifyContent: "space-between" }
           : { justifyContent: "center" }
       ]}
-      round={true}
     >
       <Text style={styles.text}>{text}</Text>
       {children}
-    </Card>
+    </View>
   );
 }
 
@@ -23,10 +22,12 @@ const styles = StyleSheet.create({
   title: {
     backgroundColor: theme.colors.accent.blue,
     borderWidth: 0,
+    borderRadius: 1000,
     borderColor: "",
     display: "flex",
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
+    padding: 2
   },
   flex: {
     justifyContent: "space-between"
@@ -35,6 +36,8 @@ const styles = StyleSheet.create({
   text: {
     fontSize: theme.fontSize.m,
     fontStyle: "bold",
-    fontWeight: 500
+    fontWeight: 500,
+    paddingHorizontal: theme.spacing.m,
+    paddingVertical: theme.spacing.s,
   }
 });

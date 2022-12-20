@@ -6,6 +6,7 @@ import { theme } from "../../style/theme.style";
 import MainButton from "../elements/button/NextStepButton";
 import Title from "../elements/layout/Title";
 import Avatar from "../elements/avatar/Avatar";
+import RoundButton from "../elements/button/RoundButton";
 
 function Item({ item }) {
   return (
@@ -24,7 +25,7 @@ export default function Workshops() {
 
   return (
     <Page title="Workshops">
-      <Title text="Information about StoryCrafting"><View>i</View></Title>
+      <Title text="Information about StoryCrafting"><RoundButton title="i"/></Title>
       <FlatList
         style={styles.workshopGrid}
         numColumns={2}
