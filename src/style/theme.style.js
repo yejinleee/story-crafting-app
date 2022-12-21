@@ -32,7 +32,8 @@ const colors = {
   failure: palette.red,
   card: "rgba(52, 52, 52, 0.1)",
   border: {
-    light: palette.grey,
+    light: "#f7f7f7",
+    medium: palette.grey,
     strong: "#cccccc"
   },
   accent: {
@@ -62,7 +63,7 @@ export const theme = {
       paddingVertical: spacing.s,
       borderRadius: radius.m,
       borderWidth: 1,
-      borderColor: colors.border.light,
+      borderColor: colors.border.medium,
     }
   },
   textVariants: {

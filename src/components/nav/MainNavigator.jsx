@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 const Tab = createBottomTabNavigator();
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Posting from "../pages/Posting";
+import MainHeader from "../elements/layout/MainHeader";
 
 const MainNavigator = () => {
   return (
@@ -14,6 +15,7 @@ const MainNavigator = () => {
         name="Home"
         component={Posting}
         options={{
+          header: () => <MainHeader icon="add-circle"/>,
           tabBarLabel: "",
           tabBarIcon: ({ focused }) => {
             if (focused) {
@@ -38,6 +40,7 @@ const MainNavigator = () => {
         name="Workshop"
         component={Workshops}
         options={{
+          header: () => <MainHeader icon="star"/>,
           tabBarLabel: "",
           tabBarIcon: ({ focused }) => {
             if (focused) {
@@ -62,6 +65,7 @@ const MainNavigator = () => {
         name="Chat"
         component={Account}
         options={{
+          header: () => <MainHeader title="Chat" icon="chatbox-ellipses"/>,
           tabBarLabel: "",
           tabBarIcon: ({ focused }) => {
             if (focused) {
@@ -86,6 +90,7 @@ const MainNavigator = () => {
         name="Profile"
         component={Account}
         options={{
+          header: () => <MainHeader title="Profile" icon="settings"/>,
           tabBarLabel: "",
           tabBarIcon: ({ focused }) => {
             if (focused) {

@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
       height: 2
     },
     shadowOpacity: 0.15,
-    shadowRadius: 3
+    shadowRadius: 3,
+    borderColor: theme.colors.border.light
   },
   flex: {
     display: "flex",
