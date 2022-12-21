@@ -11,7 +11,7 @@ export default function Backpack2() {
     const onpressNextstep = () => {
         navigation.navigate('MainNavigator');
     }
-
+    console.log([...Array(10)].map((_, i) => i))
     return(
         <Page>
             <Header left={'Collect your backpack'} right={0} />
@@ -19,6 +19,9 @@ export default function Backpack2() {
                 <View style={styles.textWrap}>
                     <Text>What are you interesed in?</Text>
                     <Text>Mulitple selection possible</Text>
+                </View>
+                <View>
+                  
                 </View>
             </View>
             <MainButton title="next step" onPress={onpressNextstep}></MainButton>

@@ -1,11 +1,14 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, Platform, Image } from 'react-native';
-
+import {useRecoilState} from 'recoil';
+import { personalData } from '../../../state/personalData';
 export const AvatarQBtn = ({iconSrc, serialN, text, isSelected, handleOnpress}) => {
+    const [createAvatar, setCreateAvatar] = useRecoilState(personalData);
     return (
         <>
             <TouchableOpacity onPress={handleOnpress}
-                style={ isSelected ? [styles.circleBtn, styles.circleBtnSelected] : [styles.circleBtn, styles.circleBtnUnelected]}
+                className= {iconSrc}
+                style={ createAvatar.includes(iconSrc) ? [styles.circleBtn, styles.circleBtnSelected] : [styles.circleBtn, styles.circleBtnUnelected]}
             >
                 <Image
                   source={require(`../../../assets/onboarding/${iconSrc}.png`)}

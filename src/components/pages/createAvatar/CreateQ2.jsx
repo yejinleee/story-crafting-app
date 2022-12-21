@@ -6,6 +6,8 @@ import Page from "../Page";
 import {useNavigation} from '@react-navigation/native';
 import { Header } from "../../elements/layout/Header";
 import { AvatarQBtn } from "./avatarComponents";
+import { useRecoilState } from 'recoil';
+import { personalData } from "../../../state/personalData";
 
 export default function CreateQ2() {
     const navigation = useNavigation();
@@ -14,7 +16,21 @@ export default function CreateQ2() {
     }
     const [q2_1, setQ2_1] = useState(false);
     const [q2_2, setQ2_2] = useState(false);
+    const [createAvatar, setCreateAvatar] = useRecoilState(personalData);
 
+    // ..... !------------
+    const handleOnpress = (selected, opposite) => {
+      if (createAvatar.includes(selected)) {
+        const newAvatar = createAvatar.filter((i) => i !==selected);
+        setCreateAvatar(newAvatar);
+      } else{
+        setCreateAvatar((prev) => [...prev, selected])
+      }
+      if (createAvatar.includes(opposite)) {
+        const newAvatar = createAvatar.filter((i) => i !==opposite);
+        setCreateAvatar(newAvatar);
+      }
+    }
     return(
         <Page>
             <Header left={'Beginning of the journey'} right={'2'} />
@@ -24,10 +40,10 @@ export default function CreateQ2() {
                 </View>
                 <View style={styles.btnWrap}>
                     <View style={styles.btn}>
-                        <AvatarQBtn text={'Party with friends'} isSelected={q2_1} iconSrc={'q2_1'}/>
+                        <AvatarQBtn text={'Party with friends'} isSelected={q2_1} iconSrc={'q2_1'} handleOnpress={() => handleOnpress('q2_1', 'q2_2')}/>
                     </View>
                     <View style={styles.btn}>
-                        <AvatarQBtn text={'Movie night and popcorn'} isSelected={q2_2} iconSrc={'q2_2'}/>
+                        <AvatarQBtn text={'Movie night and popcorn'} isSelected={q2_2} iconSrc={'q2_2'} handleOnpress={() => handleOnpress('q2_2', 'q2_1')}/>
                     </View>
                 </View>
             </View>
