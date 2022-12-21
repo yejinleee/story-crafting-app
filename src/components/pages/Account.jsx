@@ -15,6 +15,7 @@ import Rewards from "./account/Rewards";
 import Card from "../elements/layout/Card";
 import Title from "../elements/layout/Title";
 import ScrollPage from "./ScrollPage";
+import MainHeader from "../elements/layout/MainHeader";
 
 const Stack = createNativeStackNavigator();
 
@@ -51,7 +52,7 @@ export default function Account({ navigation }) {
   };
 
   const Profile = () => (
-    <ScrollPage>
+    <ScrollPage header={<MainHeader icon="settings" title="Profile" />}>
       <Card shadow={true} style={styles.avatarSpace}>
         <View style={styles.avatarSelector}>
           <Selector
@@ -87,7 +88,10 @@ export default function Account({ navigation }) {
         }
       }}
     >
-      <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen
+        name="Main"
+        component={Profile}
+      />
       <Stack.Screen name="Backpack" component={Backpack} />
       <Stack.Screen name="Avatar" component={Avatar} />
       <Stack.Screen name="Rewards" component={Rewards} />

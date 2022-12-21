@@ -2,6 +2,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Text, View } from "react-native";
 import { theme } from "../../style/theme.style";
 import Card from "../elements/layout/Card";
+import MainHeader from "../elements/layout/MainHeader";
 import Post from "../elements/posting/Post";
 import Page from "./Page";
 import ScrollPage from "./ScrollPage";
@@ -22,7 +23,7 @@ export default function Posting() {
       <Stack.Screen
         name="Posting"
         component={() => (
-          <ScrollPage>
+          <ScrollPage header={<MainHeader icon="add-circle"/>}>
             <Card round={true}>
               <Text
                 style={{fontSize: theme.fontSize.s}}

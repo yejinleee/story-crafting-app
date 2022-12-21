@@ -4,30 +4,38 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { TouchableOpacity } from "react-native-web";
 
 MainHeader.defaultProps = {
-  icon: "add-circle"
 };
 
-export default function MainHeader({ title, icon, onAction }) {
+export default function MainHeader({ onBackButton, title, icon, onAction }) {
   const iconSize = 32;
 
   return (
     <View style={styles.headerContainer}>
       <View style={styles.header}>
-        {!title ? (
-          <Image
-            source={require("../../../assets/logo_storycrafting_blue.png")}
-            style={{ width: 48, height: 48 }}
-          />
-        ) : (
-          <Text style={styles.title}>{title}</Text>
-        )}
-        <TouchableOpacity onPress={() => onAction && onAction()}>
+        <View style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
+          {onBackButton && <TouchableOpacity onPress={onBackButton}>
+            <Ionicons
+              name={"chevron-back"}
+              color={theme.colors.foreground}
+              size={iconSize}
+            />
+          </TouchableOpacity>}
+          {!title ? (
+            <Image
+              source={require("../../../assets/logo_storycrafting_blue.png")}
+              style={{ width: 48, height: 48 }}
+            />
+          ) : (
+            <Text style={styles.title}>{title}</Text>
+          )}
+        </View>
+       {icon &&  <TouchableOpacity onPress={() => onAction && onAction()}>
           <Ionicons
             name={icon}
             color={theme.colors.accent.blue}
             size={iconSize}
           />
-        </TouchableOpacity>
+        </TouchableOpacity>}
       </View>
     </View>
   );
@@ -40,7 +48,7 @@ const styles = StyleSheet.create({
   },
   header: {
     height: "100%",
-    marginHorizontal: theme.spacing.l,
+    marginHorizontal: theme.spacing.m,
     borderBottomWidth: 1,
     borderColor: theme.colors.border.strong,
     display: "flex",

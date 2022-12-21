@@ -2,13 +2,14 @@ import { Text, View } from "react-native";
 import { theme } from "../../../style/theme.style";
 import Card from "../../elements/layout/Card";
 import GridList from "../../elements/layout/GridList";
+import MainHeader from "../../elements/layout/MainHeader";
 import Title from "../../elements/layout/Title";
 import Page from "../Page";
 import ScrollPage from "../ScrollPage";
 
-export default function Backpack() {
+export default function Backpack({navigation}) {
   return (
-    <ScrollPage>
+    <ScrollPage header={<MainHeader onBackButton={navigation.goBack} title="Backpack"/>}>
       <Card shadow={true}>
         <Title
           text="Goal"

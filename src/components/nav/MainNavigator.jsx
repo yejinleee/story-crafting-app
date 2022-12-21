@@ -15,7 +15,7 @@ const MainNavigator = () => {
         name="Home"
         component={Posting}
         options={{
-          header: () => <MainHeader icon="add-circle"/>,
+          header: () => { },
           tabBarLabel: "",
           tabBarIcon: ({ focused }) => {
             if (focused) {
@@ -40,7 +40,7 @@ const MainNavigator = () => {
         name="Workshop"
         component={Workshops}
         options={{
-          header: () => <MainHeader icon="star"/>,
+          header: () => {},
           tabBarLabel: "",
           tabBarIcon: ({ focused }) => {
             if (focused) {
@@ -65,7 +65,7 @@ const MainNavigator = () => {
         name="Chat"
         component={Account}
         options={{
-          header: () => <MainHeader title="Chat" icon="chatbox-ellipses"/>,
+          header: () => {},
           tabBarLabel: "",
           tabBarIcon: ({ focused }) => {
             if (focused) {
@@ -90,7 +90,7 @@ const MainNavigator = () => {
         name="Profile"
         component={Account}
         options={{
-          header: () => <MainHeader title="Profile" icon="settings"/>,
+          header: () => {},
           tabBarLabel: "",
           tabBarIcon: ({ focused }) => {
             if (focused) {

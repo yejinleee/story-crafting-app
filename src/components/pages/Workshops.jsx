@@ -8,6 +8,7 @@ import Title from "../elements/layout/Title";
 import Avatar from "../elements/avatar/Avatar";
 import RoundButton from "../elements/button/RoundButton";
 import ScrollPage from "./ScrollPage";
+import MainHeader from "../elements/layout/MainHeader";
 
 function Item({ item }) {
   return (
@@ -25,7 +26,7 @@ export default function Workshops() {
   }
 
   return (
-    <ScrollPage title="Workshops">
+    <ScrollPage title="Workshops" header={<MainHeader icon="star"/>}>
       <Title text="Information about StoryCrafting"><RoundButton title="i"/></Title>
       <FlatList
         style={styles.workshopGrid}

@@ -1,14 +1,23 @@
 import React from "react";
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import { theme } from "../../style/theme.style";
+import MainHeader from "../elements/layout/MainHeader";
+import Page from "./Page";
 
-export default function ScrollPage({ title, children }) {
+export default function ScrollPage({ title, children, header }) {
   return (
-    <ScrollView style={{flex:1, backgroundColor: '#FFFFFF', paddingVertical: theme.spacing.m}}>
-      <View style={styles.container}>
-        {children}
-      </View>
-    </ScrollView>
+    <Page>
+      {header}
+      <ScrollView
+        style={{
+          flex: 1,
+          backgroundColor: "#FFFFFF",
+          paddingVertical: theme.spacing.m
+        }}
+      >
+        <View style={styles.container}>{children}</View>
+      </ScrollView>
+    </Page>
   );
 }
 

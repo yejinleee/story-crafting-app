@@ -3,13 +3,14 @@ import { theme } from "../../../style/theme.style";
 import Card from "../../elements/layout/Card";
 import Divider from "../../elements/layout/Divider";
 import GridList from "../../elements/layout/GridList";
+import MainHeader from "../../elements/layout/MainHeader";
 import Title from "../../elements/layout/Title";
 import Page from "../Page";
 import ScrollPage from "../ScrollPage";
 
-export default function Avatar() {
+export default function Avatar({navigation}) {
   return (
-    <ScrollPage>
+    <ScrollPage header={<MainHeader onBackButton={navigation.goBack} title="Avatar"/>}>
       <Card shadow={true}>
         <Title
           text="Avatar"
