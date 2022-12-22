@@ -10,7 +10,7 @@ import { AvatarQBtn } from "./avatarComponents";
 export default function CreateYouravatar() {
     const navigation = useNavigation();
     const onpressNextstep = () => {
-        console.log('먀');
+      navigation.navigate('Backpack');
     }
     return(
         <Page>
