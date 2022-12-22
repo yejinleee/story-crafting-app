@@ -9,7 +9,6 @@ const Login =() => {
     const [pw, setPw] = useState('');
     const onpressLogin = () => {
         navigation.navigate('MainNavigator');
-        console.log('login');
     }
     const navigation = useNavigation();
     const onpressSignup = () => {

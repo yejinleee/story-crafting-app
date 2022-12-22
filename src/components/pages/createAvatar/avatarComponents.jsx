@@ -28,8 +28,6 @@ export const AvatarQBtn = ({iconSrc, serialN, text, isSelected, handleOnpress}) 
 // Collect your backpack PAGE
 export const InterestBtn = ({serialN, text, isSelected, handleOnpress}) => {
     const [interst, setinterst] = useRecoilState(personalDataInterst);
-    console.log(interst);
-
     return (
         <>
             <TouchableOpacity onPress={handleOnpress}
