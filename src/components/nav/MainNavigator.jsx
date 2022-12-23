@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 const Tab = createBottomTabNavigator();
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Posting from "../pages/Posting";
-import MainHeader from "../elements/layout/MainHeader";
+import Chat from '../pages/Chat';
 
 const MainNavigator = () => {
   return (
@@ -63,7 +63,7 @@ const MainNavigator = () => {
       />
       <Tab.Screen
         name="Chat"
-        component={Account}
+        component={Chat}
         options={{
           header: () => {},
           tabBarLabel: "",
