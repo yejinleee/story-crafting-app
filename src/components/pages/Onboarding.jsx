@@ -6,8 +6,8 @@ const Onboarding = () => {
         <SafeAreaView style={[styles.flex, {backgroundColor: 'white'}]}>
             <StatusBar barStyle={'dark-content'} backgroundColor="white" />
             <View style={styles.container}>
-                <Image source={require('../../assets/logo_storycrafting.png')} style={{width: 250, height: 250, borderRadius: 15}} />
-                <Text>Storycrafting app</Text>
+                <Image source={require('../../assets/logo_storycrafting.png')} style={{width: 143, height: 159}} />
+                <Text style={{color: '#3787FF', fontSize: 24, marginTop: 30}}>Storycrafting app</Text>
             </View>
         </SafeAreaView>
     )
