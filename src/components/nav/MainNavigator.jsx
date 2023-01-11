@@ -16,7 +16,7 @@ const MainNavigator = () => {
         component={Posting}
         options={{
           header: () => { },
-          tabBarLabel: "",
+          tabBarLabel: "Home",
           tabBarIcon: ({ focused }) => {
             if (focused) {
               return (
@@ -41,7 +41,7 @@ const MainNavigator = () => {
         component={Workshops}
         options={{
           header: () => {},
-          tabBarLabel: "",
+          tabBarLabel: "Workshop",
           tabBarIcon: ({ focused }) => {
             if (focused) {
               return (
@@ -66,7 +66,7 @@ const MainNavigator = () => {
         component={Chat}
         options={{
           header: () => {},
-          tabBarLabel: "",
+          tabBarLabel: "Chatting",
           tabBarIcon: ({ focused }) => {
             if (focused) {
               return (
@@ -91,7 +91,7 @@ const MainNavigator = () => {
         component={Account}
         options={{
           header: () => {},
-          tabBarLabel: "",
+          tabBarLabel: "Profile",
           tabBarIcon: ({ focused }) => {
             if (focused) {
               return (

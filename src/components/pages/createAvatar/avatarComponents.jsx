@@ -12,9 +12,7 @@ export const AvatarQBtn = ({iconSrc, serialN, text, isSelected, handleOnpress}) 
             >
                 <Image
                   source={require(`../../../assets/onboarding/${iconSrc}.png`)}
-                  style={iconSrc.includes('q2_1') ? {width: 85, height: 46}
-                  : iconSrc.includes('q2_2') ?{width: 76, height: 38}
-                  : iconSrc.includes('q3_1') ? {width: 74, height: 62} :{ width: 45, height: 45 }}
+                  style={{width: 60, height: 60}}
                 />
             </TouchableOpacity>
             <Text style={styles.text}>
