@@ -7,7 +7,9 @@ const Onboarding = () => {
             <StatusBar barStyle={'dark-content'} backgroundColor="white" />
             <View style={styles.container}>
                 <Image source={require('../../assets/logo_storycrafting.png')} style={{width: 143, height: 159}} />
-                <Text style={{color: '#3787FF', fontSize: 24, marginTop: 30}}>Storycrafting app</Text>
+                <Text style={{color: '#3787FF', fontSize: 24, marginTop: 30}}>
+                    Storycrafting app
+                </Text>
             </View>
         </SafeAreaView>
     )
