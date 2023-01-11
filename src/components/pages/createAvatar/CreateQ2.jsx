@@ -11,8 +11,8 @@ import { personalData } from "../../../state/personalData";
 
 export default function CreateQ2() {
     const navigation = useNavigation();
-    const onpressNextstep = () => {
-        navigation.navigate('CreateQ3');
+    const onpressGoback = () => {
+        navigation.navigate('CreateQ1');
     }
     const [q2_1, setQ2_1] = useState(false);
     const [q2_2, setQ2_2] = useState(false);
@@ -47,7 +47,11 @@ export default function CreateQ2() {
                     </View>
                 </View>
             </View>
-            <MainButton title="next step" onPress={onpressNextstep}></MainButton>
+            <TouchableOpacity onPress={onpressGoback} style={{alignItems:'center'}}>
+              <Text style={{color:'#8B8A8A', textDecorationLine: 'underline'}}>
+                Go back
+              </Text>
+            </TouchableOpacity>
 
         </Page>
     );

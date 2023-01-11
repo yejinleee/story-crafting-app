@@ -29,6 +29,9 @@ export default function CreateQ1() {
         const newAvatar = createAvatar.filter((i) => i !==opposite);
         setCreateAvatar(newAvatar);
       }
+      setTimeout(() => {
+        navigation.navigate('CreateQ2');
+      }, 200)
     }
 
     return(
@@ -47,8 +50,6 @@ export default function CreateQ1() {
                     </View>
                 </View>
             </View>
-            <MainButton title="next step" onPress={onpressNextstep}></MainButton>
-
         </Page>
     );
 }

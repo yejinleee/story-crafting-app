@@ -26,12 +26,13 @@ export default function Backpack2() {
         setInterst((prev) => [...prev, selected])
       }
     }
-    const interest = ['Music', 'Sport','Food','Travel','Musesum','Exhibition','Festival','Writing','Game','Nature','Movie','Surf']
+    const interest = ['Music', 'Sport','Cooking','Travel','Dancing','Exhibition','Festival','Reading','Game','Nature','Movie','Crafting']
+    const interestIcon = ['🎤','⚽️','🍳','🌎','💃','🖼️','🎊','📚','🎮','🏔️','🎥','🔨']
     const Item = ({ item }) => (
       <>
       <View style={[styles.center, {width: '33%'}]}>
       {/* <View style={[styles.center, {marginLeft: 36, marginRight: 36, marginBottom: 25 }]}> */}
-        <InterestBtn text={interest[item]} isSelected={true} serialN={item} handleOnpress={() => handleOnpress(String(item))}/>
+        <InterestBtn text={interest[item]} icon={interestIcon[item]} isSelected={true} serialN={item} handleOnpress={() => handleOnpress(String(item))}/>
       </View>
       </>
     );

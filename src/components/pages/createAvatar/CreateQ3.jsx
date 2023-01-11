@@ -11,8 +11,8 @@ import { personalData } from "../../../state/personalData";
 
 export default function CreateQ3() {
     const navigation = useNavigation();
-    const onpressNextstep = () => {
-        navigation.navigate('CreateYouravatar');
+    const onpressGoback = () => {
+        navigation.navigate('CreateQ2');
     }
     const [q3_1, setQ3_1] = useState(false);
     const [q3_2, setQ3_2] = useState(false);
@@ -47,8 +47,11 @@ export default function CreateQ3() {
                     </View>
                 </View>
             </View>
-            <MainButton title="next step" onPress={onpressNextstep}></MainButton>
-
+            <TouchableOpacity onPress={onpressGoback} style={{alignItems:'center'}}>
+              <Text style={{color:'#8B8A8A', textDecorationLine: 'underline'}}>
+                Go back
+              </Text>
+            </TouchableOpacity>
         </Page>
     );
 }
