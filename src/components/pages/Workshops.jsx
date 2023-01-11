@@ -27,7 +27,7 @@ export default function Workshops() {
 
   return (
     <ScrollPage title="Workshops" header={<MainHeader icon="star"/>}>
-      <Title text="Information about StoryCrafting"><RoundButton title="i"/></Title>
+      <Title style={{backgroundColor: theme.colors.accent.red}} text="Information about StoryCrafting"><RoundButton title="i"/></Title>
       <FlatList
         style={styles.workshopGrid}
         numColumns={2}

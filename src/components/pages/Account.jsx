@@ -16,17 +16,20 @@ import Card from "../elements/layout/Card";
 import Title from "../elements/layout/Title";
 import ScrollPage from "./ScrollPage";
 import MainHeader from "../elements/layout/MainHeader";
+import FullAvatar from "../elements/avatar/FullAvatar";
+import { useAvatarContext } from "../../hooks/context/AvatarContext";
 
 const Stack = createNativeStackNavigator();
 
 export default function Account({ navigation }) {
   const [seed, setSeed] = useState(0);
-
+  const avatar =
+    useAvatarContext();
   function onAddButton() {
     setSeed((d) => d + 1);
   }
 
-  const Selector = ({ icon, name, onClick }) => {
+  const Selector = ({ icon, name, onClick, preview }) => {
     const { red, blue, green } = theme.colors.accent;
     const titleColors = { Avatar: red, Backpack: green, Rewards: blue };
     const titleColor = titleColors[name] ?? red;
@@ -45,7 +48,7 @@ export default function Account({ navigation }) {
       >
         <Title text={name} style={{ backgroundColor: titleColor }}></Title>
         <View style={styles.iconSpace}>
-          <Ionicons name={icon} color={titleColor} size={48} />
+          {preview ?? <Ionicons name={icon} color={titleColor} size={48} />}
         </View>
       </TouchableOpacity>
     );
@@ -58,6 +61,7 @@ export default function Account({ navigation }) {
           <Selector
             name="Avatar"
             icon="walk-outline"
+            preview={<FullAvatar {...avatar}/>}
             onClick={() => navigation.navigate("Avatar")}
           />
         </View>

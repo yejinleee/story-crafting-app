@@ -16,7 +16,7 @@ export default function Post() {
         }}
       >
         <View style={styles.info}>
-          <Avatar />
+          <Avatar random={true}/>
           author
         </View>
         <View style={[styles.content]}></View>

@@ -4,11 +4,18 @@ import React, { useEffect } from "react";
 import { StyleSheet } from "react-native";
 import { theme } from "./src/style/theme.style";
 import { useState } from "react";
-import Onboarding from './src/components/pages/Onboarding';
+import Onboarding from "./src/components/pages/Onboarding";
 import { AuthNavigator } from "./src/components/nav/AuthNavigator";
 import MainNavigator from "./src/components/nav/MainNavigator";
 import { AvatarNavigator } from "./src/components/nav/AvatarNavigator";
-import {RecoilRoot, atom, selector, useRecoilState, useRecoilValue} from 'recoil';
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue
+} from "recoil";
+import AvatarProvider from "./src/hooks/context/AvatarProvider";
 
 const Stack = createNativeStackNavigator();
 
@@ -33,23 +40,31 @@ export default function App() {
 
   return (
     <RecoilRoot>
-    <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown: false, gestureEnabled: false}}>
-          {loading ? (
-            <Stack.Screen name="Onboarding" component={Onboarding} />
-          ) : isLogin ? (
-            <Stack.Screen name="MainNavigator" component={MainNavigator} />
-          ) : (
-            <Stack.Screen name="AuthNavigator" component={AuthNavigator} /> 
-          )
-          // ) : madeAvatar ? (
-          //   <Stack.Screen name="AuthNavigator" component={AuthNavigator} />
-          // ) : (
-          //   <Stack.Screen name="AvatarNavigator" component={AvatarNavigator} />
-          // )}
-          }
-        </Stack.Navigator>      
-    </NavigationContainer>
+      <NavigationContainer>
+        <AvatarProvider>
+          <Stack.Navigator
+            screenOptions={{ headerShown: false, gestureEnabled: false }}
+          >
+            {loading
+              ? <Stack.Screen name="Onboarding" component={Onboarding} />
+              : isLogin
+                ? <Stack.Screen
+                    name="MainNavigator"
+                    component={MainNavigator}
+                  />
+                : <Stack.Screen
+                    name="AuthNavigator"
+                    component={AuthNavigator}
+                  />
+            // ) : madeAvatar ? (
+            //   <Stack.Screen name="AuthNavigator" component={AuthNavigator} />
+            // ) : (
+            //   <Stack.Screen name="AvatarNavigator" component={AvatarNavigator} />
+            // )}
+            }
+          </Stack.Navigator>
+        </AvatarProvider>
+      </NavigationContainer>
     </RecoilRoot>
   );
 }
