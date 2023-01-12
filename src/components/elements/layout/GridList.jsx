@@ -2,7 +2,7 @@ import { FlatList, Text, View } from "react-native";
 import { theme } from "../../../style/theme.style";
 import Card from "./Card";
 
-export default function GridList({ title, children }) {
+export default function GridList({ title, children, elements }) {
   const Item = ({ item }) => (
     <Card
       style={{

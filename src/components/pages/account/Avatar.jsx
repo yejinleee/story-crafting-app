@@ -1,4 +1,11 @@
-import { Dimensions, FlatList, StyleSheet, Text, View } from "react-native";
+import {
+  Dimensions,
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  View
+} from "react-native";
 import { theme } from "../../../style/theme.style";
 import Card from "../../elements/layout/Card";
 import Divider from "../../elements/layout/Divider";
@@ -7,10 +14,21 @@ import MainHeader from "../../elements/layout/MainHeader";
 import Title from "../../elements/layout/Title";
 import Page from "../Page";
 import ScrollPage from "../ScrollPage";
+import AvatarDisplay from "../../elements/avatar/Avatar";
+import useAvatar from "../../../hooks/useAvatar";
+import ItemList from "../../elements/layout/ItemList";
+import { useAvatarContext } from "../../../hooks/context/AvatarContext";
+import FullAvatar from "../../elements/avatar/FullAvatar";
 
-export default function Avatar({navigation}) {
+export default function Avatar({ navigation }) {
+  const { hats, eyewears, faces, bodies } = useAvatar();
+  const { hat, eyewear, face, body, setHat, setEyewear, setFace, setBody } =
+    useAvatarContext();
+
   return (
-    <ScrollPage header={<MainHeader onBackButton={navigation.goBack} title="Avatar"/>}>
+    <ScrollPage
+      header={<MainHeader onBackButton={navigation.goBack} title="Avatar" />}
+    >
       <Card shadow={true}>
         <Title
           text="Avatar"
@@ -25,7 +43,8 @@ export default function Avatar({navigation}) {
             fontStyle: "italic"
           }}
         >
-          Avatar to be added
+          {/* <AvatarDisplay {...{ hat, eyewear, face }} style={{borderColor: "transparent", height: 128, width: 128}}/> */}
+          <FullAvatar {...{ hat, eyewear, face, body }}></FullAvatar>
         </View>
         <Card>
           <Text
@@ -56,9 +75,50 @@ export default function Avatar({navigation}) {
           text="Equipment"
           style={{ backgroundColor: theme.colors.accent.green }}
         />
-      <GridList title="Skin">{[...Array(10)].map((_, i) => i)}</GridList>
-      <GridList title="Clothes">{[...Array(15)].map((_, i) => i)}</GridList>
-      <GridList title="Head">{[...Array(5)].map((_, i) => i)}</GridList>
+        <ItemList
+          title="Hat"
+          elements={Object.keys(hats).map((key, i) => (
+            <Image
+              style={{ height: "100%", width: "100%" }}
+              source={hats[key ?? "default"] ?? "default"}
+              key={key}
+            ></Image>
+          ))}
+          onSelect={(i, el) => setHat(el)}
+        />
+        <ItemList
+          title="Eyewear"
+          elements={Object.keys(eyewears).map((key, i) => (
+            <Image
+              style={{ height: "100%", width: "100%" }}
+              source={eyewears[key ?? "default"] ?? "default"}
+              key={key}
+            ></Image>
+          ))}
+          onSelect={(i, el) => setEyewear(el)}
+        />
+        <ItemList
+          title="Face"
+          elements={Object.keys(faces).map((key, i) => (
+            <Image
+              style={{ height: "100%", width: "100%" }}
+              source={faces[key ?? "default"] ?? "default"}
+              key={key}
+            ></Image>
+          ))}
+          onSelect={(i, el) => setFace(el)}
+        />
+                <ItemList
+          title="Body"
+          elements={Object.keys(bodies).map((key, i) => (
+            <Image
+              style={{ height: "100%", width: "100%" }}
+              source={bodies[key ?? "default"] ?? "default"}
+              key={key}
+            ></Image>
+          ))}
+          onSelect={(i, el) => setBody(el)}
+        />
       </Card>
     </ScrollPage>
   );
