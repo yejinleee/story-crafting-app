@@ -6,6 +6,8 @@ import { Header } from "../../elements/layout/Header";
 import { AvatarQBtn } from "./avatarComponents";
 import { useRecoilState } from 'recoil';
 import { personalData } from "../../../state/personalData";
+import { useAvatarContext } from "../../../hooks/context/AvatarContext";
+import useAvatar from "../../../hooks/useAvatar";
 
 export default function CreateQ1() {
     const navigation = useNavigation();
@@ -13,8 +15,16 @@ export default function CreateQ1() {
     const [q1_2, setQ1_2] = useState(true);
     const [createAvatar, setCreateAvatar] = useRecoilState(personalData);
 
+    const { hats, eyewears, faces, bodies } = useAvatar();
+    const { hat, eyewear, face, body, setHat, setEyewear, setFace, setBody } = useAvatarContext();
+
     // ..... !------------
     const handleOnpress = (selected, opposite) => {
+      if (selected=='q1_1'){
+        setBody("shirt-blue"); //셔츠+조끼 주석 수정
+      } else{
+        setBody("shirt-yellow");
+      }
       if (createAvatar.includes(selected)) {
         const newAvatar = createAvatar.filter((i) => i !==selected);
         setCreateAvatar(newAvatar);

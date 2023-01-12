@@ -5,13 +5,19 @@ import Divider from "../../elements/layout/Divider";
 import Page from "../Page";
 import {useNavigation} from '@react-navigation/native';
 import { Header } from "../../elements/layout/Header";
-import { AvatarQBtn } from "./avatarComponents";
+
+import FullAvatar from "../../elements/avatar/FullAvatar";
+import { useAvatarContext } from "../../../hooks/context/AvatarContext";
+import useAvatar from "../../../hooks/useAvatar";
 
 export default function CreateYouravatar() {
     const navigation = useNavigation();
     const onpressNextstep = () => {
       navigation.navigate('Backpack');
     }
+    const { hats, eyewears, faces, bodies } = useAvatar();
+    const { hat, eyewear, face, body, setHat, setEyewear, setFace, setBody } = useAvatarContext();
+    console.log('결과쓰', body)
     return(
         <Page>
             <Header left={'Your avatar'} right={'4'} />
@@ -19,7 +25,8 @@ export default function CreateYouravatar() {
                 <View style={styles.textWrap}>
                     <Text>Congratulations, this is your avatar</Text>
                 </View>
-                <Image source={require('../../../assets/sprinkleAvatar.png')} style={{width: 343, height: 450 }} />
+                <FullAvatar {...{ hat, eyewear, face, body }} />
+                {/* <Image source={require('../../../assets/sprinkleAvatar.png')} style={{width: 343, height: 450 }} /> */}
             </View>
             <MainButton title="next step" onPress={onpressNextstep}></MainButton>
 

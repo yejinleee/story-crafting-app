@@ -9,6 +9,8 @@ import { AvatarQBtn } from "./avatarComponents";
 import { useRecoilState } from 'recoil';
 import { personalData } from "../../../state/personalData";
 
+import { useAvatarContext } from "../../../hooks/context/AvatarContext";
+
 export default function CreateQ2() {
     const navigation = useNavigation();
     const onpressGoback = () => {
@@ -18,8 +20,16 @@ export default function CreateQ2() {
     const [q2_2, setQ2_2] = useState(false);
     const [createAvatar, setCreateAvatar] = useRecoilState(personalData);
 
+    const { hat, eyewear, face, body, setHat, setEyewear, setFace, setBody } = useAvatarContext();
+
+
     // ..... !------------
     const handleOnpress = (selected, opposite) => {
+      if (selected=='q2_1'){
+        setEyewear("stars");
+      } else{
+        setEyewear("round");
+      }
       if (createAvatar.includes(selected)) {
         const newAvatar = createAvatar.filter((i) => i !==selected);
         setCreateAvatar(newAvatar);

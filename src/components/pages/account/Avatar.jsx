@@ -108,7 +108,7 @@ export default function Avatar({ navigation }) {
           ))}
           onSelect={(i, el) => setFace(el)}
         />
-                <ItemList
+        <ItemList
           title="Body"
           elements={Object.keys(bodies).map((key, i) => (
             <Image
