@@ -17,7 +17,6 @@ export default function CreateYouravatar() {
     }
     const { hats, eyewears, faces, bodies } = useAvatar();
     const { hat, eyewear, face, body, setHat, setEyewear, setFace, setBody } = useAvatarContext();
-    console.log('결과쓰', body)
     return(
         <Page>
             <Header left={'Your avatar'} right={'4'} />

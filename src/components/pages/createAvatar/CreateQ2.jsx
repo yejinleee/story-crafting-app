@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import MainButton from "../../elements/button/NextStepButton";
-import Divider from "../../elements/layout/Divider";
 import Page from "../Page";
 import {useNavigation} from '@react-navigation/native';
 import { Header } from "../../elements/layout/Header";
@@ -20,8 +18,7 @@ export default function CreateQ2() {
     const [q2_2, setQ2_2] = useState(false);
     const [createAvatar, setCreateAvatar] = useRecoilState(personalData);
 
-    const { hat, eyewear, face, body, setHat, setEyewear, setFace, setBody } = useAvatarContext();
-
+    const {setEyewear} = useAvatarContext();
 
     // ..... !------------
     const handleOnpress = (selected, opposite) => {

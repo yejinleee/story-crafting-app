@@ -1,17 +1,9 @@
 import React, { useState } from "react";
 import { Image, StyleSheet, Text, View, Button } from "react-native";
 import { theme } from "../../style/theme.style";
-import MainButton from "../elements/button/NextStepButton";
-import Divider from "../elements/layout/Divider";
-import Page from "./Page";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import Calendar from "../elements/profile/Calendar";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "./Home";
 import { TouchableOpacity } from "react-native-web";
-import Backpack from "./account/Backpack";
-import Avatar from "./account/Avatar";
-import Rewards from "./account/Rewards";
 import Card from "../elements/layout/Card";
 import Title from "../elements/layout/Title";
 import ScrollPage from "./ScrollPage";
@@ -23,7 +15,6 @@ const Stack = createNativeStackNavigator();
 
 export default function Chat({ navigation }) {
   const newChat = () => {
-    console.log('새채팅');
   }
   const Selector = ({ icon, name, onClick }) => {
     const { red, blue, green } = theme.colors.accent;
@@ -53,11 +44,11 @@ export default function Chat({ navigation }) {
     <ScrollPage header={<ChatHeader title="Chatting" onAction={newChat}/>}>
       {dummy.map((v, i) => 
         <Card shadow={true} style={styles.avatarSpace}>
-          <TouchableOpacity onPress={() => navigation.navigate('ChatDetails', {chatId: 1})}>
+          <TouchableOpacity onPress={() => navigation.navigate('ChatDetails', {chatId: i})}>
             <View style={styles.eachChatWrap}>
               <View style={styles.avatarWrap}>
                 <Image
-                      source={require("../../assets/tab_bar_icons/icon_home_selected.png")}
+                      source={require(`../../assets/chat/chatP${i+1}.png`)}
                       style={{ width: 32, height: 34 }}
                     />
               </View>
