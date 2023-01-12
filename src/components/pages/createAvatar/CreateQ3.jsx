@@ -30,6 +30,9 @@ export default function CreateQ3() {
           const newAvatar = createAvatar.filter((i) => i !==opposite);
           setCreateAvatar(newAvatar);
         }
+        setTimeout(() => {
+          navigation.navigate('CreateYouravatar');
+        }, 200)
       }
     return(
         <Page>
@@ -43,7 +46,7 @@ export default function CreateQ3() {
                         <AvatarQBtn text={'Alone'} isSelected={q3_1} iconSrc={'q3_1'} handleOnpress={() => handleOnpress('q3_1', 'q3_2')}/>
                     </View>
                     <View style={styles.btn}>
-                        <AvatarQBtn text={'In a team'} isSelected={q3_2} iconSrc={'q3_2'} handleOnpress={() => handleOnpress('q3_1', 'q3_2')}/>
+                        <AvatarQBtn text={'In a team'} isSelected={q3_2} iconSrc={'q3_2'} handleOnpress={() => handleOnpress('q3_2', 'q3_1')}/>
                     </View>
                 </View>
             </View>

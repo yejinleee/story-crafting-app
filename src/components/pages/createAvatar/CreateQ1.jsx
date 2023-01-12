@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import MainButton from "../../elements/button/NextStepButton";
 import Page from "../Page";
 import {useNavigation} from '@react-navigation/native';
 import { Header } from "../../elements/layout/Header";
@@ -10,9 +9,6 @@ import { personalData } from "../../../state/personalData";
 
 export default function CreateQ1() {
     const navigation = useNavigation();
-    const onpressNextstep = () => {
-        navigation.navigate('CreateQ2');
-    }
     const [q1_1, setQ1_1] = useState(false);
     const [q1_2, setQ1_2] = useState(true);
     const [createAvatar, setCreateAvatar] = useRecoilState(personalData);
@@ -50,6 +46,9 @@ export default function CreateQ1() {
                     </View>
                 </View>
             </View>
+              <Text style={{color:'white', textDecorationLine: 'underline'}}>
+                Go back
+              </Text>
         </Page>
     );
 }

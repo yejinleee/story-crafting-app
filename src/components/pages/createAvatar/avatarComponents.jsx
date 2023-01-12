@@ -57,7 +57,7 @@ const styles= StyleSheet.create({
         alignItems: 'center',
     },
     circleBtnSelected:{
-        backgroundColor: '#C9F0CD',
+        backgroundColor: palette.blue, 
         ...Platform.select({
             ios: {
                 shadowColor: 'rgb(50,50,50)',
@@ -75,7 +75,7 @@ const styles= StyleSheet.create({
     },
     circleBtnUnelected:{
         borderWidth: 1,
-        borderColor: 'rgba(0,0,0,0.4)',
+        borderColor: 'rgba(0,0,0,0.15)',
     },
     text: {
         width: 116,
@@ -91,7 +91,7 @@ const styles= StyleSheet.create({
         justifyContent: 'center',
     },
     circleBtn2Selected:{
-        backgroundColor: palette.green, 
+        backgroundColor: palette.blue, 
         ...Platform.select({
             ios: {
                 shadowColor: 'rgb(50,50,50)',

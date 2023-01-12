@@ -30,6 +30,9 @@ export default function CreateQ2() {
         const newAvatar = createAvatar.filter((i) => i !==opposite);
         setCreateAvatar(newAvatar);
       }
+      setTimeout(() => {
+        navigation.navigate('CreateQ3');
+      }, 200)
     }
     return(
         <Page>

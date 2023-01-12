@@ -28,8 +28,8 @@ export default function Signup({ navigation }) {
                 </KeyboardAvoidingView>
             </View>
             <MainButton title="next step" onPress={onpressNextstep}></MainButton>
+            {/* 주석 */}
             {/* <MainButton title="next step" disabled={email=='' || pw=='' || username=='' ? true: false} onPress={onpressNextstep}></MainButton> */}
-
         </Page>
     );
 }
