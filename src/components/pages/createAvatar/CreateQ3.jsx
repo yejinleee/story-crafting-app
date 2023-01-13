@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import MainButton from "../../elements/button/NextStepButton";
-import Divider from "../../elements/layout/Divider";
 import Page from "../Page";
 import {useNavigation} from '@react-navigation/native';
 import { Header } from "../../elements/layout/Header";
@@ -9,17 +7,26 @@ import { AvatarQBtn } from "./avatarComponents";
 import { useRecoilState } from 'recoil';
 import { personalData } from "../../../state/personalData";
 
+import { useAvatarContext } from "../../../hooks/context/AvatarContext";
+
 export default function CreateQ3() {
     const navigation = useNavigation();
-    const onpressNextstep = () => {
-        navigation.navigate('CreateYouravatar');
+    const onpressGoback = () => {
+        navigation.navigate('CreateQ2');
     }
     const [q3_1, setQ3_1] = useState(false);
     const [q3_2, setQ3_2] = useState(false);
     const [createAvatar, setCreateAvatar] = useRecoilState(personalData);
+    
+    const {setHat } = useAvatarContext();
 
     // ..... !------------
     const handleOnpress = (selected, opposite) => {
+      if (selected=='q3_1'){
+        setHat("beanie-yellow"); // 헤드폰 주석 수정
+      } else{
+        setHat("beanie-blue");
+      }
         if (createAvatar.includes(selected)) {
           const newAvatar = createAvatar.filter((i) => i !==selected);
           setCreateAvatar(newAvatar);
@@ -30,6 +37,9 @@ export default function CreateQ3() {
           const newAvatar = createAvatar.filter((i) => i !==opposite);
           setCreateAvatar(newAvatar);
         }
+        setTimeout(() => {
+          navigation.navigate('CreateYouravatar');
+        }, 200)
       }
     return(
         <Page>
@@ -43,12 +53,15 @@ export default function CreateQ3() {
                         <AvatarQBtn text={'Alone'} isSelected={q3_1} iconSrc={'q3_1'} handleOnpress={() => handleOnpress('q3_1', 'q3_2')}/>
                     </View>
                     <View style={styles.btn}>
-                        <AvatarQBtn text={'In a team'} isSelected={q3_2} iconSrc={'q3_2'} handleOnpress={() => handleOnpress('q3_1', 'q3_2')}/>
+                        <AvatarQBtn text={'In a team'} isSelected={q3_2} iconSrc={'q3_2'} handleOnpress={() => handleOnpress('q3_2', 'q3_1')}/>
                     </View>
                 </View>
             </View>
-            <MainButton title="next step" onPress={onpressNextstep}></MainButton>
-
+            <TouchableOpacity onPress={onpressGoback} style={{alignItems:'center'}}>
+              <Text style={{color:'#8B8A8A', textDecorationLine: 'underline'}}>
+                Go back
+              </Text>
+            </TouchableOpacity>
         </Page>
     );
 }

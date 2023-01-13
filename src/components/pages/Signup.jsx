@@ -18,20 +18,18 @@ export default function Signup({ navigation }) {
     return(
         <Page title="Signup">
             <GobackHeader goBack={goBack} title="" />
-            {/* <TouchableOpacity onPress={goBack}> */}
-              {/* <Text>asdfsafads</Text> */}
-            {/* </TouchableOpacity> */}
             <View style={[styles.container, {flex:1}]}>
                 <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} >
                     <Text style={[styles.signupText, {marginTop: 70}]}>Type your university account</Text>
-                    <TextInput style={[styles.input, {marginTop: 9}]} onChangeText={setEmail} value={email} placeholder={'Email'}/>
+                    <TextInput style={[styles.input, {marginTop: 9}]} onChangeText={setEmail} value={email} placeholder={'E-mail'}/>
                     <TextInput style={[styles.input, {marginTop: 14}]} onChangeText={setPw} value={pw} placeholder={'Password'} />
                     <Text style={[styles.signupText, {marginTop: 37}]}>Type your username</Text>
                     <TextInput style={[styles.input, {marginTop: 9}]} onChangeText={setUsername} value={username} placeholder={'Username'}/>
                 </KeyboardAvoidingView>
             </View>
             <MainButton title="next step" onPress={onpressNextstep}></MainButton>
-
+            {/* 주석 */}
+            {/* <MainButton title="next step" disabled={email=='' || pw=='' || username=='' ? true: false} onPress={onpressNextstep}></MainButton> */}
         </Page>
     );
 }
@@ -50,5 +48,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 20,
     paddingLeft: 20,
+    borderColor: 'rgba(0,0,0,0.1)',
   },
 });

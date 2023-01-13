@@ -5,6 +5,7 @@ import Divider from "../../elements/layout/Divider";
 import Page from "../Page";
 import {useNavigation} from '@react-navigation/native';
 import { styleSystem } from "../../../style/styleSystem";
+import { palette } from "../../../style/theme.style";
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function CreateAvatar() {
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
     borderRadius: '50%',
     backgroundColor: 'none',
     borderWidth: 3,
-    borderColor: '#C9F0CD',
+    borderColor: palette.blue,
   },
   circle2:{
     position: 'absolute',
@@ -46,13 +47,13 @@ const styles = StyleSheet.create({
     height: 125,
     borderRadius: '50%',
     borderWidth: 2,
-    borderColor: '#C9F0CD',
+    borderColor: 'rgba(170,203,252,0.3)',
   },
   circle3:{
     position: 'absolute',
     width: 90,
     height: 90,
     borderRadius: '50%',
-    backgroundColor: '#C9F0CD',
+    backgroundColor: palette.blue,
   },
 });

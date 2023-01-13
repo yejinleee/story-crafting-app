@@ -41,7 +41,7 @@ export default function Posting() {
       />
       <Stack.Screen
         name="CreatePost"
-        component={() => <Page>Create post</Page>}
+        component={() => <Page><Text>Create post</Text></Page>}
       />
     </Stack.Navigator>
   );

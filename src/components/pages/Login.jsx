@@ -21,14 +21,14 @@ const Login =() => {
             <View style={styles.container}>
                 <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} >
                     <View style={{alignItems: 'center'}}>
-                        <TextInput style={[styles.input, {marginTop: 107}]} onChangeText={setEmail} value={email} placeholder={'Email'}/>
+                        <TextInput style={[styles.input, {marginTop: 107}]} onChangeText={setEmail} value={email} placeholder={'E-mail'}/>
                         <TextInput style={[styles.input, {marginTop: 30}]} onChangeText={setPw} value={pw} placeholder={'Password'} />
                     </View>
                     <TouchableOpacity style={styles.forgot}>
                         <Text>Forgot your password?</Text>                        
                     </TouchableOpacity>
                     <TouchableOpacity onPress={onpressLogin} style={styles.loginBtn}>
-                        <Text>Login</Text>
+                        <Text style={{fontWeight: 'bold'}}>Login</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={onpressSignup} style={styles.signupBtn}>
                         <Text style={{textDecorationLine: 'underline'}}>sign up</Text>
@@ -54,6 +54,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 20,
         paddingLeft: 20,
+        borderColor: 'rgba(0,0,0,0.1)',
+
       },
       forgot: {
         alignItems: 'flex-end',

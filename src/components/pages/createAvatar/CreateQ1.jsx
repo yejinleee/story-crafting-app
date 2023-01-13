@@ -1,24 +1,28 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import MainButton from "../../elements/button/NextStepButton";
+import { StyleSheet, Text, View } from "react-native";
 import Page from "../Page";
 import {useNavigation} from '@react-navigation/native';
 import { Header } from "../../elements/layout/Header";
 import { AvatarQBtn } from "./avatarComponents";
 import { useRecoilState } from 'recoil';
 import { personalData } from "../../../state/personalData";
+import { useAvatarContext } from "../../../hooks/context/AvatarContext";
 
 export default function CreateQ1() {
     const navigation = useNavigation();
-    const onpressNextstep = () => {
-        navigation.navigate('CreateQ2');
-    }
     const [q1_1, setQ1_1] = useState(false);
     const [q1_2, setQ1_2] = useState(true);
     const [createAvatar, setCreateAvatar] = useRecoilState(personalData);
 
+    const { setBody } = useAvatarContext();
+
     // ..... !------------
     const handleOnpress = (selected, opposite) => {
+      if (selected=='q1_1'){
+        setBody("shirt-blue"); //셔츠+조끼 주석 수정
+      } else{
+        setBody("shirt-yellow");
+      }
       if (createAvatar.includes(selected)) {
         const newAvatar = createAvatar.filter((i) => i !==selected);
         setCreateAvatar(newAvatar);
@@ -29,6 +33,9 @@ export default function CreateQ1() {
         const newAvatar = createAvatar.filter((i) => i !==opposite);
         setCreateAvatar(newAvatar);
       }
+      setTimeout(() => {
+        navigation.navigate('CreateQ2');
+      }, 200)
     }
 
     return(
@@ -47,8 +54,9 @@ export default function CreateQ1() {
                     </View>
                 </View>
             </View>
-            <MainButton title="next step" onPress={onpressNextstep}></MainButton>
-
+              <Text style={{color:'white', textDecorationLine: 'underline'}}>
+                Go back
+              </Text>
         </Page>
     );
 }

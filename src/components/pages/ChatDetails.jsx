@@ -7,7 +7,7 @@ import ChatHeader from "../elements/layout/ChatHeader";
 import { dummy } from "./ChatDummy";
 export const ChatDetails = ({navigation, route, chatId}) => {
     const chat = dummy[route.params.chatId].chat
-
+    console.log(chatId, chat)
     return (
         <>
             <Page>
@@ -25,7 +25,7 @@ export const ChatDetails = ({navigation, route, chatId}) => {
                                 { i%2==0 ? (
                                     v.map((v,i) => 
                                         <View style={styles.you} key={i}>
-                                            <Text>{v}2</Text>
+                                            <Text>{v}</Text>
                                         </View>
                                     )
                                 ) : (
@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
         gap: 15,
     },
     you: {
+        justifyContent: 'center',
         width: 'fit-content',
         paddingLeft: 12,
         paddingRight: 12,
@@ -67,6 +68,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     me:{
+        justifyContent: 'center',
         width: 'fit-content',
         marginBottom: 5,
         paddingLeft: 12,

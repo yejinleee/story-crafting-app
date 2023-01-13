@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import MainButton from "../../elements/button/NextStepButton";
-import Divider from "../../elements/layout/Divider";
 import Page from "../Page";
 import {useNavigation} from '@react-navigation/native';
 import { Header } from "../../elements/layout/Header";
@@ -9,17 +7,26 @@ import { AvatarQBtn } from "./avatarComponents";
 import { useRecoilState } from 'recoil';
 import { personalData } from "../../../state/personalData";
 
+import { useAvatarContext } from "../../../hooks/context/AvatarContext";
+
 export default function CreateQ2() {
     const navigation = useNavigation();
-    const onpressNextstep = () => {
-        navigation.navigate('CreateQ3');
+    const onpressGoback = () => {
+        navigation.navigate('CreateQ1');
     }
     const [q2_1, setQ2_1] = useState(false);
     const [q2_2, setQ2_2] = useState(false);
     const [createAvatar, setCreateAvatar] = useRecoilState(personalData);
 
+    const {setEyewear} = useAvatarContext();
+
     // ..... !------------
     const handleOnpress = (selected, opposite) => {
+      if (selected=='q2_1'){
+        setEyewear("stars");
+      } else{
+        setEyewear("round");
+      }
       if (createAvatar.includes(selected)) {
         const newAvatar = createAvatar.filter((i) => i !==selected);
         setCreateAvatar(newAvatar);
@@ -30,6 +37,9 @@ export default function CreateQ2() {
         const newAvatar = createAvatar.filter((i) => i !==opposite);
         setCreateAvatar(newAvatar);
       }
+      setTimeout(() => {
+        navigation.navigate('CreateQ3');
+      }, 200)
     }
     return(
         <Page>
@@ -47,7 +57,11 @@ export default function CreateQ2() {
                     </View>
                 </View>
             </View>
-            <MainButton title="next step" onPress={onpressNextstep}></MainButton>
+            <TouchableOpacity onPress={onpressGoback} style={{alignItems:'center'}}>
+              <Text style={{color:'#8B8A8A', textDecorationLine: 'underline'}}>
+                Go back
+              </Text>
+            </TouchableOpacity>
 
         </Page>
     );

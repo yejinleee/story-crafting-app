@@ -16,8 +16,10 @@ export default function Post() {
         }}
       >
         <View style={styles.info}>
-          <Avatar random={true}/>
-          author
+          <Avatar />
+          <Text>
+            author
+          </Text>
         </View>
         <View style={[styles.content]}></View>
         <View style={styles.textContent}>
