@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { Image, StyleSheet, Text, View, Button, ScrollView} from "react-native";
+import { StyleSheet, Text, View, Button, ScrollView} from "react-native";
 import { theme } from "../../style/theme.style";
-import ScrollPage from "./ScrollPage";
 import Page from "./Page";
 import ChatHeader from "../elements/layout/ChatHeader";
-import { dummy } from "./ChatDummy";
+import { dummy,groupDummy } from "./ChatDummy";
 export const ChatDetails = ({navigation, route, chatId}) => {
     const chat = dummy[route.params.chatId].chat
-    console.log(chatId, chat)
     return (
         <>
             <Page>
@@ -37,6 +35,41 @@ export const ChatDetails = ({navigation, route, chatId}) => {
                                 )}
                             </View>
                         )}
+                    </View>
+                </ScrollView>
+            </Page>
+        </>        
+    )
+}
+
+export const GroupchatDetails = ({navigation, route, chatId}) => {
+    const chat = groupDummy
+    console.log(chat)
+    return (
+        <>
+            <Page>
+                <ChatHeader onBackButton={navigation.goBack} title="Yaejin, Baris ...+4"/>
+                <Text style={{textAlign: 'center', marginVertical: 20,}}>Welcome Now you are part of workshop.</Text>
+                <ScrollView
+                    style={{
+                    flex: 1,
+                    backgroundColor: "#FFFFFF",
+                    paddingVertical: theme.spacing.m
+                    }}
+                >
+                    <View style={styles.container}>
+                        <Text style={{fontWeight: 'bold'}}>{chat[0].name}</Text>
+                        <View >
+                            <View style={styles.you}>
+                                <Text>{chat[0].chat}</Text>
+                            </View>
+                        </View>
+                        <Text style={{fontWeight: 'bold'}}>{chat[1].name}</Text>
+                        <View >
+                            <View style={styles.you}>
+                                <Text>{chat[1].chat}</Text>
+                            </View>
+                        </View>
                     </View>
                 </ScrollView>
             </Page>

@@ -20,3 +20,17 @@ export const dummy = [
         ]
     }
 ]
+export const groupDummy = [
+    {
+        name: 'Yaejin',
+        chat: [
+            ['hi!'],
+        ]
+    },
+    {
+        name: 'Baris',
+        chat: [
+            ['Nice to meet you!'],
+        ]
+    }
+]
