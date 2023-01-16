@@ -4,7 +4,7 @@ import { theme } from "../../style/theme.style";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Calendar from "../elements/profile/Calendar";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { TouchableOpacity } from "react-native-web";
+import { TouchableOpacity } from "react-native";
 import Backpack from "./account/Backpack";
 import Avatar from "./account/Avatar";
 import Rewards from "./account/Rewards";

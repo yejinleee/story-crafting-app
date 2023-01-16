@@ -15,7 +15,7 @@ export default function Activity({ name, description, onClose }) {
           {description}
         </Text>
         {/* <Button onPress={onClose && onClose} title="Close"></Button> */}
-        <br />
+        {/* <br /> */}
         <MainButton title="Start"></MainButton>
       </View>
     </View>

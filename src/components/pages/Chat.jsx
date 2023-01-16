@@ -70,7 +70,7 @@ export default function Chat({ navigation }) {
             <View style={styles.eachChatWrap}>
               <View style={styles.avatarWrap}>
                 <Image
-                      source={require(`../../assets/chat/chatP${i+1}.png`)}
+                      source={require(`../../assets/chat/chatP1.png`)}
                       style={{ width: 32, height: 34 }}
                     />
               </View>
