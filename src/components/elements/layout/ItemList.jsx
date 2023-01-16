@@ -30,7 +30,7 @@ export default function ItemList({ title, children, elements, onSelect }) {
     return <Card
       style={{
         textAlign: "center",
-        borderWidth: 10,
+        borderWidth: 6,
         flex: 1,
         margin: theme.spacing.s,
         width: "auto",
@@ -41,7 +41,7 @@ export default function ItemList({ title, children, elements, onSelect }) {
       <TouchableOpacity
         style={{ width: "100%", height: "100%" }}
         onPress={() => {
-          if (isEmpty) return;
+          if (isEmpty || !onSelect) return;
           setSelected(item);
           onSelect(item, elements[item]?.key);
         }}
