@@ -7,7 +7,7 @@ export default function Calendar() {
   return (
     <Card shadow={true} style={styles.container}>
       <Title
-        style={{ backgroundColor: theme.colors.accent.green }}
+        style={{ backgroundColor: theme.colors.accent.blue }}
         text="December"
       >
         <Text>{"< >  "}</Text>

@@ -6,7 +6,8 @@ export default function useAvatar() {
     "beanie-red": require("../assets/avatar/hat/beanie-red.png"),
     "beanie-blue": require("../assets/avatar/hat/beanie-blue.png"),
     "beanie-yellow": require("../assets/avatar/hat/beanie-yellow.png"),
-    "beanie-green": require("../assets/avatar/hat/beanie-green.png")
+    "beanie-green": require("../assets/avatar/hat/beanie-green.png"),
+    "beret": require("../assets/avatar/hat/beret.png")
   };
 
   const eyewears = {
@@ -14,7 +15,7 @@ export default function useAvatar() {
     "stars": require("../assets/avatar/eyewear/glasses-star.png"),
     "shades-stars": require("../assets/avatar/eyewear/shades-star.png"),
     "round": require("../assets/avatar/eyewear/round.png"),
-    "programmer-art-1": require("../assets/avatar/eyewear/shades-weird.png")
+    "shades": require("../assets/avatar/eyewear/shades.png")
   };
 
   const faces = {
@@ -31,6 +32,9 @@ export default function useAvatar() {
     "shirt-yellow": require("../assets/avatar/body/shirt-yellow.png"),
     "shirt-red": require("../assets/avatar/body/shirt-red.png"),
     "shirt-blue": require("../assets/avatar/body/shirt-blue.png"),
+    "sweater-blue": require("../assets/avatar/body/sweater-blue.png"),
+    "sweater-teal": require("../assets/avatar/body/sweater-teal.png"),
+    "tuxedo": require("../assets/avatar/body/tuxedo.png")
   };
 
   return {

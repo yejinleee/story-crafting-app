@@ -32,7 +32,7 @@ export default function Avatar({ navigation }) {
       <Card shadow={true}>
         <Title
           text="Avatar"
-          style={{ backgroundColor: theme.colors.accent.red }}
+          style={{ backgroundColor: theme.colors.accent.blue }}
         />
         <View
           style={{
@@ -57,7 +57,9 @@ export default function Avatar({ navigation }) {
           >
             Avatar 1204
           </Text>
-          <Text>Something about student</Text>
+          <Text>something about student</Text>
+          <Text><b>Hobby</b>   I like to play football</Text>
+          <Text><b>Hobby</b>   I like to read books</Text>
           <Text
             style={{
               width: "100%",
@@ -73,7 +75,7 @@ export default function Avatar({ navigation }) {
       <Card shadow={true}>
         <Title
           text="Equipment"
-          style={{ backgroundColor: theme.colors.accent.green }}
+          style={{ backgroundColor: theme.colors.accent.red }}
         />
         <ItemList
           title="Hat"

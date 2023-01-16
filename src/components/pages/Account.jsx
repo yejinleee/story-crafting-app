@@ -21,13 +21,14 @@ export default function Account({ navigation }) {
   const [seed, setSeed] = useState(0);
   const avatar =
     useAvatarContext();
+    
   function onAddButton() {
     setSeed((d) => d + 1);
   }
 
   const Selector = ({ icon, name, onClick, preview }) => {
-    const { red, blue, green } = theme.colors.accent;
-    const titleColors = { Avatar: red, Backpack: green, Rewards: blue };
+    const { red, blue, yellow } = theme.colors.accent;
+    const titleColors = { Avatar: blue, Backpack: yellow, Rewards: yellow };
     const titleColor = titleColors[name] ?? red;
 
     return (
@@ -44,7 +45,7 @@ export default function Account({ navigation }) {
       >
         <Title text={name} style={{ backgroundColor: titleColor }}></Title>
         <View style={styles.iconSpace}>
-          {preview ?? <Ionicons name={icon} color={titleColor} size={48} />}
+          {preview ?? <Ionicons name={icon} color={blue} size={48} />}
         </View>
       </TouchableOpacity>
     );
