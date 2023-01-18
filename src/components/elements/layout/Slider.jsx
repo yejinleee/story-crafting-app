@@ -3,7 +3,7 @@ import { theme } from "../../../style/theme.style";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useMemo } from "react";
 
-export default function Slider({ value, outOf }) {
+export default function Slider({ value, outOf, icon }) {
   const ratio = useMemo(() => value / outOf, [value, outOf]);
 
   return (
@@ -16,7 +16,7 @@ export default function Slider({ value, outOf }) {
           ]}
         ><Text>{value} / {outOf}</Text></View>
       </View>
-      <Ionicons name={"cafe-outline"} color={theme.colors.primary} size={48} />
+      <Ionicons name={icon ?? "star-outline"} color={theme.colors.accent.red} size={32} />
     </View>
   );
 }
@@ -25,17 +25,20 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     display: "flex",
-    flexDirection: "row"
+    flexDirection: "row",
+    gap: theme.spacing.s
   },
   slider: {
     padding: 0,
     flex: 1,
     width: "100%",
-    backgroundColor: theme.colors.card,
-    borderRadius: theme.radius.m
+    backgroundColor: "transaparent",
+    borderRadius: theme.radius.m,
+    borderWidth: 1,
+    borderColor: theme.colors.accent.red
   },
   handle: {
-    backgroundColor: theme.colors.card,
+    backgroundColor: theme.colors.accent.red,
     borderRadius: theme.radius.m,
     width: "20%",
     height: "100%",

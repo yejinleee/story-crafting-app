@@ -10,9 +10,9 @@ export default function Rewards({navigation}) {
   return (
     <ScrollPage header={<MainHeader onBackButton={navigation.goBack} title="Rewards"/>}>
       <Slider value={2} outOf={5}/>
-      <Text style={theme.textVariants.title}>Workshops</Text>
+      <Text style={theme.textVariants.title}>Acquired badges</Text>
       <GridList>{[...Array(16)].map((_, i) => i)}</GridList>
-      <Text style={theme.textVariants.title}>General rewards</Text>
+      <Text style={theme.textVariants.title}>Unacquired badges</Text>
       <GridList>{[...Array(16)].map((_, i) => i)}</GridList>
     </ScrollPage>
   );
