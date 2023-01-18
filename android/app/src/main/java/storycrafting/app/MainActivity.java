@@ -1,4 +1,4 @@
-package com.storycraftingapp;
+package storycrafting.app;
 
 import android.os.Build;
 import android.os.Bundle;

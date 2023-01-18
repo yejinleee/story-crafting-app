@@ -1,11 +1,16 @@
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
 import { theme } from "../../../style/theme.style";
 import Card from "./Card";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import {Dimensions} from 'react-native';
+
+const screenDimensions = Dimensions.get('screen');
 
 export default function ItemList({ title, children, elements, onSelect }) {
   const [selected, setSelected] = useState();
+  const [columns, setColumns] = useState(5);
+  const [screenWidth, setScreenWidth] = useState();
 
   const selectedStyle = {
     backgroundColor: "transaparent",
@@ -20,6 +25,21 @@ export default function ItemList({ title, children, elements, onSelect }) {
     borderColor: theme.colors.accent.gray,
   }
 
+  useEffect(() => {
+    if (!screenWidth) return;
+    setColumns(parseInt(screenWidth / 100));
+  }, [screenWidth]);
+
+  useEffect(() => {
+    const subscription = Dimensions.addEventListener(
+      'change',
+      ({window}) => {
+        setScreenWidth(window.width);
+      },
+    );
+    return () => subscription?.remove();
+  });
+
   const Item = ({ item }) => {
     const isEmpty = item >= elements.length;
     let itemStyle = isEmpty && emptyStyle;
@@ -30,7 +50,7 @@ export default function ItemList({ title, children, elements, onSelect }) {
     return <Card
       style={{
         textAlign: "center",
-        borderWidth: 6,
+        borderWidth: 5,
         flex: 1,
         margin: theme.spacing.s,
         width: "auto",
@@ -72,9 +92,10 @@ export default function ItemList({ title, children, elements, onSelect }) {
       <Text style={{ marginLeft: theme.spacing.m }}>{title}</Text>
       <Card>
         <FlatList
+          key={columns}
           style={{ width: "100%" }}
-          numColumns={5}
-          data={[...elements, ...Array(5 - (elements.length % 5))].map(
+          numColumns={columns}
+          data={[...elements, ...Array(columns - (elements.length % columns))].map(
             (_, i) => i
           )}
           renderItem={Item}

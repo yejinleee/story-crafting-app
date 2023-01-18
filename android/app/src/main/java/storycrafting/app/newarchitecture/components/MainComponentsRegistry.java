@@ -1,4 +1,4 @@
-package com.storycraftingapp.newarchitecture.components;
+package storycrafting.app.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

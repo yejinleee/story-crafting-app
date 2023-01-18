@@ -5,7 +5,18 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": {
+      "package": "storycrafting.app"
+    },
+    "ios": {
+      "bundleIdentifier": "storycrafting.app"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d6efce4b-db8f-4b30-a10c-8a6077fdd8d3"
+      }
+    }
   },
   "name": "story-crafting-app"
 }
