@@ -34,6 +34,7 @@ export default function ItemList({ title, children, elements, onSelect }) {
         flex: 1,
         margin: theme.spacing.s,
         width: "auto",
+        padding: 0,
         aspectRatio: "1/1",
         ...(itemStyle)
       }}
@@ -65,7 +66,7 @@ export default function ItemList({ title, children, elements, onSelect }) {
     </Card>
   };
 
-  console.log("elements", elements);
+  // console.log("elements", elements);
   return (
     <View>
       <Text style={{ marginLeft: theme.spacing.m }}>{title}</Text>

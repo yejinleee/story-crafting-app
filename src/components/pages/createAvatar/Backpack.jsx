@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   circle:{
     width: 321,
     height: 321,
-    borderRadius: '50%',
+    borderRadius: 50,
     backgroundColor: '#C9F0CD',
     justifyContent: 'center',
     alignItems: 'center',

@@ -12,10 +12,30 @@ export const AvatarQBtn = ({iconSrc, serialN, text, isSelected, handleOnpress}) 
                 className= {iconSrc}
                 style={ createAvatar.includes(iconSrc) ? [styles.circleBtn, styles.circleBtnSelected] : [styles.circleBtn, styles.circleBtnUnelected]}
             >
-                <Image
-                  source={require(`../../../assets/onboarding/${iconSrc}.png`)}
+                {iconSrc === 'q1_1' && <Image
+                  source={require(`../../../assets/onboarding/q1_1.png`)}
                   style={{width: 60, height: 60}}
-                />
+                />}
+                {iconSrc === 'q1_2' && <Image
+                  source={require(`../../../assets/onboarding/q1_2.png`)}
+                  style={{width: 60, height: 60}}
+                />}
+                {iconSrc === 'q2_1' && <Image
+                  source={require(`../../../assets/onboarding/q2_1.png`)}
+                  style={{width: 60, height: 60}}
+                />}
+                {iconSrc === 'q2_2' && <Image
+                  source={require(`../../../assets/onboarding/q2_2.png`)}
+                  style={{width: 60, height: 60}}
+                />}
+                {iconSrc === 'q3_1' && <Image
+                  source={require(`../../../assets/onboarding/q3_1.png`)}
+                  style={{width: 60, height: 60}}
+                />}
+                {iconSrc === 'q3_2' && <Image
+                  source={require(`../../../assets/onboarding/q3_2.png`)}
+                  style={{width: 60, height: 60}}
+                />}
             </TouchableOpacity>
             <Text style={styles.text}>
                 {text}
@@ -52,7 +72,7 @@ const styles= StyleSheet.create({
     circleBtn: {
         width: 125,
         height: 125,
-        borderRadius: '50%',
+        borderRadius: 50,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -85,7 +105,7 @@ const styles= StyleSheet.create({
     circle2: {
         width: 65,
         height: 65,
-        borderRadius: '50%',
+        borderRadius: 50,
         borderWidth: 1,
         borderColor: 'rgba(0,0,0,0.1)',
         justifyContent: 'center',

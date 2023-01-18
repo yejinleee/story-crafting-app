@@ -58,8 +58,8 @@ export default function Avatar({ navigation }) {
             Avatar 1204
           </Text>
           <Text>something about student</Text>
-          <Text><b>Hobby</b>   I like to play football</Text>
-          <Text><b>Hobby</b>   I like to read books</Text>
+          <Text>Hobby   I like to play football</Text>
+          <Text>Hobby   I like to read books</Text>
           <Text
             style={{
               width: "100%",
