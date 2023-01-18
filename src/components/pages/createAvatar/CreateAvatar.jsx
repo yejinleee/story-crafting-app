@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   circle1:{
     width: 205,
     height: 205,
-    borderRadius: '50%',
+    borderRadius: 50,
     backgroundColor: 'none',
     borderWidth: 3,
     borderColor: palette.blue,
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: 125,
     height: 125,
-    borderRadius: '50%',
+    borderRadius: 50,
     borderWidth: 2,
     borderColor: 'rgba(170,203,252,0.3)',
   },
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: 90,
     height: 90,
-    borderRadius: '50%',
+    borderRadius: 50,
     backgroundColor: palette.blue,
   },
 });

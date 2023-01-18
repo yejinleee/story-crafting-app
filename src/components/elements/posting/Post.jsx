@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import { theme } from "../../../style/theme.style";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { TouchableOpacity } from "react-native-web";
+import { TouchableOpacity } from "react-native";
 import Card from "../layout/Card";
 import Avatar from "../avatar/Avatar";
 
@@ -23,7 +23,7 @@ export default function Post() {
         </View>
         <View style={[styles.content]}></View>
         <View style={styles.textContent}>
-          <Text style={{ display: "block" }}>
+          <Text style={{}}>
             <Ionicons
               name="heart-circle-outline"
               color={theme.colors.accent.red}
@@ -31,7 +31,7 @@ export default function Post() {
             />
             {" 3 likes"}
           </Text>
-          <Text style={{ display: "block" }}>Description of the post</Text>
+          <Text style={{}}>Description of the post</Text>
         </View>
       </View>
       <Card shadow={true} round={true} style={[styles.comments]}>
