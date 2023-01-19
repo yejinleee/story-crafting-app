@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Button, FlatList } from "react-native";
+import { StyleSheet, Text, View, Button, FlatList, ImageBackground } from "react-native";
 import Workshop from "../elements/workshop/Workshop";
 import Page from "./Page";
 import { theme } from "../../style/theme.style";
@@ -10,6 +10,7 @@ import RoundButton from "../elements/button/RoundButton";
 import ScrollPage from "./ScrollPage";
 import MainHeader from "../elements/layout/MainHeader";
 import Slider from "../elements/layout/Slider";
+import backgroundImg from '../../assets/workshop_background.png';
 
 function Item({ item }) {
   return (
@@ -29,11 +30,12 @@ export default function Workshops() {
   return (
     <ScrollPage title="Workshops" header={<MainHeader icon="star" />}>
       <Title
-        style={{ backgroundColor: theme.colors.accent.red }}
+        style={{ backgroundColor: theme.colors.accent.red}}
         text="Information about StoryCrafting"
       >
         <RoundButton title="i" />
       </Title>
+      <ImageBackground style={styles.background} source={backgroundImg} resizeMode="contain" >
       <FlatList
         style={styles.workshopGrid}
         numColumns={1}
@@ -61,17 +63,12 @@ export default function Workshops() {
             icon: "camera-outline",
             description: "Description of the assignement",
             stars: 2
-          },
-          {
-            name: "Name of the assignment",
-            icon: "chatbox-ellipses-outline",
-            description: "Description of the assignement",
-            stars: 2
           }
         ].map((v, i) => ({...v, rightAligned: i % 2 !== 0 }))}
         renderItem={Item}
       />
       {/* <MainButton title="Add" onPress={onAddButton} /> */}
+      </ImageBackground>
       <Slider value={75} outOf={100} icon="golf-outline" />
     </ScrollPage>
   );
@@ -79,12 +76,19 @@ export default function Workshops() {
 
 const styles = StyleSheet.create({
   workshopGrid: {
-    width: "100%"
+    width: "100%",
+    paddingTop: 42
   },
   item: {
     flex: 1,
     // maxWidth: "50%", // 100% devided by the number of rows you want
     alignItems: "center",
-    padding: theme.spacing.s
+    padding: theme.spacing.m,
+    paddingBottom: 2
+  },
+  background: {
+    width: 420,
+    height: "100%",
+    marginHorizontal: "auto"
   }
 });
