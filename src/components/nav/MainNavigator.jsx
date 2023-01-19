@@ -6,30 +6,49 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 const Tab = createBottomTabNavigator();
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Posting from "../pages/Posting";
-import Chat from '../pages/Chat';
+import Chat from "../pages/Chat";
+
+const ICON_SIZE = 32;
+const ICON_STYLE = { width: ICON_SIZE, height: ICON_SIZE };
 
 const MainNavigator = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarStyle: {
+          height: 75,
+          paddingBottom: 10,
+          borderTopColor: "transparent",
+          shadowColor: "#000",
+          shadowOffset: {
+            width: 0,
+            height: 3
+          },
+          shadowOpacity: 0.27,
+          shadowRadius: 10,
+          elevation: 6
+        }
+      }}
+    >
       <Tab.Screen
         name="Home"
         component={Posting}
         options={{
-          header: () => { },
+          header: () => {},
           tabBarLabel: "Home",
           tabBarIcon: ({ focused }) => {
             if (focused) {
               return (
                 <Image
                   source={require("../../assets/tab_bar_icons/icon_home_selected.png")}
-                  style={{ width: 26, height: 26 }}
+                  style={ICON_STYLE}
                 />
               );
             } else {
               return (
                 <Image
                   source={require("../../assets/tab_bar_icons/icon_home.png")}
-                  style={{ width: 26, height: 26 }}
+                  style={ICON_STYLE}
                 />
               );
             }
@@ -47,14 +66,14 @@ const MainNavigator = () => {
               return (
                 <Image
                   source={require("../../assets/tab_bar_icons/icon_workshops_selected.png")}
-                  style={{ width: 26, height: 26 }}
+                  style={ICON_STYLE}
                 />
               );
             } else {
               return (
                 <Image
                   source={require("../../assets/tab_bar_icons/icon_workshops.png")}
-                  style={{ width: 26, height: 26 }}
+                  style={ICON_STYLE}
                 />
               );
             }
@@ -72,14 +91,14 @@ const MainNavigator = () => {
               return (
                 <Image
                   source={require("../../assets/tab_bar_icons/icon_chat_selected.png")}
-                  style={{ width: 26, height: 26 }}
+                  style={ICON_STYLE}
                 />
               );
             } else {
               return (
                 <Image
                   source={require("../../assets/tab_bar_icons/icon_chat.png")}
-                  style={{ width: 26, height: 26}}
+                  style={ICON_STYLE}
                 />
               );
             }
@@ -97,14 +116,14 @@ const MainNavigator = () => {
               return (
                 <Image
                   source={require("../../assets/tab_bar_icons/icon_profile_selected.png")}
-                  style={{ width: 26, height: 26 }}
+                  style={ICON_STYLE}
                 />
               );
             } else {
               return (
                 <Image
                   source={require("../../assets/tab_bar_icons/icon_profile.png")}
-                  style={{ width: 26, height: 26 }}
+                  style={ICON_STYLE}
                 />
               );
             }
