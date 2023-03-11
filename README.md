@@ -57,6 +57,7 @@ Adding to research results, we gather knowledge through the surveys and user exp
   <div>
 <img width="250" alt="2023-03-10 10 27 23" src="https://user-images.githubusercontent.com/81412212/224469447-b3191b11-de25-49c8-82d0-81075f98a2d8.png">
 <img width="250" alt="023-03-10 10 27 36" src="https://user-images.githubusercontent.com/81412212/224469268-6db131b6-f645-41fa-a360-fef3dfa1f5fa.png">
+<br/>
 <img width="250" alt="2023-03-10 10 27 52" src="https://user-images.githubusercontent.com/81412212/224469283-bb50eb1a-8f61-4eeb-a878-d4bfeff2901c.png">
 <img width="250" alt="2023-03-10 10 28 03" src="https://user-images.githubusercontent.com/81412212/224469286-eee31b59-3b1a-436c-9d21-4c26316f3d04.png">
   </div>
